@@ -1,0 +1,125 @@
+:root {
+    --bg-color: #FFF8F0;
+    --detail-dark: #14371F;
+    --detail-medium: #4A7140;
+    --color-light: #E9972D;
+    --color-medium: #C4501B;
+    --color-main: #A0361B;
+}
+
+header {    
+    height: 8vh;
+    display: flex;
+    padding-left: 110px;
+    padding-right: 110px;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Kolker Brush', cursive;
+    font-size: 130px;
+    color: var(--color-main);
+}
+
+.options__container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.option__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.option__item:hover {
+    background: linear-gradient(#fff0 92%, var(--detail-dark) 8%);
+}
+
+
+.option__text {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--detail-dark);
+}
+
+main {
+    background-color: tomato;
+    height: 80vh;
+}
+
+footer {
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 110px;
+    padding-left: 110px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--detail-dark);
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    color: var(--titles-color);
+    gap: 12px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 24px;
+}
+
+.social-text {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+    color: var(--titles-color);
+}
+
+.copyright-text {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.social-container {
+    color: var(--titles-color);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 2px solid var(--detail-dark);
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    transition: all 0.3s;
+}
+
+.social-item:hover {
+    background-color: rgba(255, 255, 255, 0.378);
+    transition: all 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--titles-color);
+}
+
+#social-icon {
+    font-size: 30px;
+}

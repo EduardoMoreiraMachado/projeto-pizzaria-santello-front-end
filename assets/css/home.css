@@ -1,0 +1,41 @@
+.home__container {
+    display: flex;
+    align-items: center;
+    background: url(../../img/ivan-torres-MQUqbmszGGM-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    padding-left: 110px;
+    color: var(--color-main);
+}
+
+.welcome__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30vw;
+    height: 610px;
+    background-color: #fff8f0b0;
+    border-radius: 50px;
+}
+
+.icon {
+    width: 200px;
+}
+
+.welcome__title {
+    font-family: 'Kolker Brush', cursive;
+    font-size: 100px;
+
+}
+
+.welcome__text {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 300;
+    padding-left: 24px;
+    padding-right: 24px;
+}
