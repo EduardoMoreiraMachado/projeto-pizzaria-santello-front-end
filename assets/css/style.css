@@ -48,8 +48,7 @@ header {
 }
 
 main {
-    background-color: tomato;
-    height: 80vh;
+    height: auto;
 }
 
 footer {
@@ -66,7 +65,7 @@ footer {
 .contacts-container {
     display: flex;
     flex-direction: column;
-    color: var(--titles-color);
+    color: var(--detail-dark);
     gap: 12px;
 }
 
@@ -83,7 +82,7 @@ footer {
 .copyright {
     display: flex;
     align-items: center;
-    color: var(--titles-color);
+    color: var(--detail-dark);
 }
 
 .copyright-text {
@@ -92,7 +91,6 @@ footer {
 }
 
 .social-container {
-    color: var(--titles-color);
     display: flex;
     align-items: center;
     gap: 20px;
@@ -107,17 +105,21 @@ footer {
     border-radius: 100%;
     width: 70px;
     height: 70px;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 .social-item:hover {
-    background-color: rgba(255, 255, 255, 0.378);
-    transition: all 0.3s;
+    background-color: var(--detail-dark);
+    transition: all 0.5s;
+}
+
+.social-item:hover #social-icon {
+    color: white;
 }
 
 a {
     text-decoration: none;
-    color: var(--titles-color);
+    color: var(--detail-dark);
 }
 
 #social-icon {
