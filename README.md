@@ -1,1 +1,1 @@
-# projeto-pizzaria-santello
+# projeto-pizzaria-santello-front-end
