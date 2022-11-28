@@ -1,21 +1,61 @@
 #header {
-    height: 10vh;
     justify-content: center;
     box-shadow: 0 3px 8px #a0361b50;
+    z-index: 10;
 }
 
 #main {
     display: flex;
-    
-    /* height: 90vh; */
+    justify-content: space-between;
+    height: 92vh;
     flex-grow: 3;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.user__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 5vh;
+    color: var(--color-main);
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 10vw;
+}
+
+.login__user {
+    display: flex;
+    flex-direction: column;
 }
 
 .img__ilustration {
-    width: 50vw;
-    height: 100vh;
+    display: flex;
+    flex-grow: 2;
+    /* width: 55vw; */
+    /* height: 92vh; */
     background: url(../../img/pizza-login.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.button__enter {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    font-size: 1.3rem;
+    background-color: var(--color-main);
+    border: none;
+    padding: 0.5vh;
 }

@@ -20,13 +20,15 @@
 
     <main id="main">
         <div class="user__container">
-            <form action="login_adm" method="post">
+            <h1 class="title">Login</h1>
+
+            <form action="login_adm" method="post" class="form__container">
                 <div class="login__user">
-                    <input type="email" placeholder="E-mail">
-                    <input type="password" maxlength="100" placeholder="Senha">
+                    <input type="email" placeholder="E-mail" id="email">
+                    <input type="password" maxlength="100" placeholder="Senha" id="senha">
                 </div>
 
-                <button class="button__enter">
+                <button class="button__enter" id="button__enter">
                     Enviar
                 </button>
             </form>
