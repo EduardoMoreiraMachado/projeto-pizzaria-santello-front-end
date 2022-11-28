@@ -1,0 +1,21 @@
+#header {
+    height: 10vh;
+    justify-content: center;
+    box-shadow: 0 3px 8px #a0361b50;
+}
+
+#main {
+    display: flex;
+    
+    /* height: 90vh; */
+    flex-grow: 3;
+}
+
+.img__ilustration {
+    width: 50vw;
+    height: 100vh;
+    background: url(../../img/pizza-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
