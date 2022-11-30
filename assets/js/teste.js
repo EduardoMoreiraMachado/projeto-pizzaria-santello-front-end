@@ -1,35 +1,46 @@
-// const teste = function() {
-//     const email = document.getElementById('email').value
-//     const senha = document.getElementById('senha').value
-
-//     const userLoginJSON = {}
-
-//     userLoginJSON.email = email
-//     userLoginJSON.senha = senha
-
-//     fetch("http://localhost:8080/v1/loginCliente", {
-//         method: "POST",
-//         headers: {
-//             'Content-Type': 'application/json',
-//             },
-//         body: JSON.stringify(userLoginJSON)
-//     });
-
-
-// }
+'use strict'
 
 const validarLogin = async (login) => {
-    const url = ''
+    let responseJSON = {}
+
+    const url = 'http://10.107.144.3:8080/v1/loginCliente'
 
     const options = {
         method: 'POST',
         body: JSON.stringify(login),
         headers: {
-            'content-type': 'application/json',
-        },
-    };
+            'content-type': 'application/json'
+        }
+    }
 
-    await fetch(url, options);
-};
+    const response = await fetch(url, options)
 
-const button = document.getElementById('button__enter').addEventListener('click', validarLogin)
+    responseJSON.statusCode = response.status
+    responseJSON.json = response.json()
+    
+    return responseJSON
+}
+
+const openDashboard = async () => {
+
+    const emailADM = document.getElementById('email').value
+    const senhaADM = document.getElementById('senha').value
+    
+    var loginJSON = {
+        email: emailADM,
+        senha: senhaADM
+    }
+    
+    const validacao = await validarLogin(loginJSON)
+
+    if (validacao.statusCode == 200) {
+        window.location.href = 'welcome-page.html'
+        console.log(validacao.statusCode)
+    }
+
+    else {
+        console.log('aaaa')
+    }
+}
+
+const button = document.getElementById('enter').addEventListener('click', openDashboard)
