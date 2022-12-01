@@ -1,0 +1,51 @@
+#header {
+    justify-content: center;
+    box-shadow: 0 3px 8px #a0361b50;
+    z-index: 10;
+}
+
+#main {
+    display: flex;
+    justify-content: space-between;
+    height: 92vh;
+}
+
+.menu__container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    height: 100%;
+    justify-content: center;
+    background-color: blue;
+}
+
+.options__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: aqua;
+}
+
+.welcome__container {
+    display: flex;
+    flex-grow: .8;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+    background-color: aquamarine
+}
+
+.main__message{
+    font-size: 5rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    width: 70%;
+}
