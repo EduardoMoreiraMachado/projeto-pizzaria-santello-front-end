@@ -7,7 +7,7 @@ const idCliente = id01.split('?')[0]
 const editarUsuario = async (usuario, id) => {
     let responseJSON = {}
 
-    const url = `http://localhost:8080/v1/cliente/${id}`
+    const url = `http://10.107.144.22:8080/v1/cliente/${id}`
 
     const options = {
         method: 'POST',
@@ -27,7 +27,7 @@ const editarUsuario = async (usuario, id) => {
 
 const excluirUsuario = async (id) => {
 
-    const url = `http://localhost:8080/v1/cliente/${id}`
+    const url = `http://10.107.144.22:8080/v1/cliente/${id}`
 
     const response = await fetch(url)
 

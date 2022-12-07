@@ -44,10 +44,4 @@ const openDashboard = async () => {
     }
 }
 
-const getName = async () => {return dadosADM[0].nome}
-
 const button = document.getElementById('enter').addEventListener('click', openDashboard)
-
-export {
-    getName
-}

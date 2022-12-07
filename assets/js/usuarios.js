@@ -3,7 +3,7 @@
 const inserirUsuario = async (usuario) => {
     let responseJSON = {}
 
-    const url = 'http://localhost:8080/v1/cliente'
+    const url = 'http://10.107.144.22:8080/v1/cliente'
 
     const options = {
         method: 'POST',
