@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../../css/reset.css">
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/welcome-page.css">
+        <link rel="stylesheet" href="../../css/mensagens.css">
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400&family=Montserrat:wght@100;200;300;400;600;800;900&display=swap" rel="stylesheet">
         <script src="../../js/info-person.js" defer type="module"></script>
         <title>Dashboard Mensagens</title>
@@ -31,6 +32,20 @@
                         <a href="#" class="option" id="usuarios">Usuários</a>
                         <a href="#" class="option" id="perfil">Perfil</a>
                     </ul>
+                </div>
+            </div>
+            <div class="message_container">
+                <div class="categoria_container">
+                    <h1 class="categoria_title">Categoria</h1>
+                    <select class="categoria_options" name="categorias" id="categorias">
+                        <option value="all">Todas</option>
+                        <option value="critic">Críticas</option>
+                        <option value="suggestion">Sugestões</option>
+                    </select>
+                </div>
+                <div class="messages-container">
+                    <h1 class="title">MENSAGENS</h1>
+                    <div class="messages" id="messages"></div>
                 </div>
             </div>
         </main>   
