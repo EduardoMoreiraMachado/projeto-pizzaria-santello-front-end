@@ -34,8 +34,9 @@ const openDashboard = async () => {
     const validacao = await validarLogin(loginJSON)
 
     if (validacao.statusCode == 200) {
+        // console.log(validacao.json)
         window.location.href = 'welcome-page.html'
-        console.log(validacao.statusCode)
+        // console.log(validacao.statusCode)
     }
 
     else {
