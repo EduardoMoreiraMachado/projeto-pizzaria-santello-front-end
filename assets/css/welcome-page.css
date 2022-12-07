@@ -26,6 +26,11 @@
 .options__container {
     display: inline-block;
     font-family: 'League Spartan', sans-serif;
+    background-color: aqua;
+}
+
+.options{
+    display: flex;
 }
 
 .options {
