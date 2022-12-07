@@ -1,7 +1,8 @@
 'use strict'
 
 const link = window.location.search.substring(1);
-const idCliente = link.split('=')[1]
+const id01 = link.split('=')[1]
+const idCliente = id01.split('?')[0]
 
 const editarUsuario = async (usuario, id) => {
     let responseJSON = {}
@@ -48,6 +49,7 @@ const editUser = async () => {
     }
     
     const save = await editarUsuario(editUserJSON, idCliente)
+    console.log(save)
 
     if (save.statusCode == 201) {
         alert('AAEEEEEEE!!!!! :))))))))')
