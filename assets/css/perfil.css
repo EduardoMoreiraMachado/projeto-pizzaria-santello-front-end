@@ -1,0 +1,95 @@
+/*
+    --bg-color: #FFF8F0;
+    --detail-dark: #14371F;
+    --detail-medium: #4A7140;
+    --color-light: #E9972D;
+    --color-medium: #C4501B;
+    --color-main: #A0361B;
+
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kolker Brush', cursive;
+    font-family: 'League Spartan', sans-serif;
+*/
+
+.user_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    margin-top: 8vh;
+    width: 100%;
+}
+
+.title {
+    width: 100%;
+    margin-top: 12vh;
+    padding-left: 4vh;
+    color: var(--color-main);
+    font-size: 70px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.edit_user_container {
+    display: flex;
+    flex-direction: column;
+    width: 76vw;
+    gap: 32px;
+}
+
+.edit_input {
+    height: 60px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 24px;
+    padding: 16px;
+    color: var(--color-medium);
+    border: none;
+    box-shadow: inset 0px -4px 0px var(--color-medium);
+}
+
+.button_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 4vh;
+    gap: 86px;
+}
+
+.button_save {
+    width: 200px;
+    height: 70px;
+    border-width: 4px;
+    border-color: var(--color-medium);
+    border-radius: 40px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-medium);
+    transition: all 0.5s;
+}
+
+.button_save:hover {
+    background-color: var(--color-medium);
+    color: white;
+    transition: all 0.5s;
+}
+
+.button_delete {
+    width: 200px;
+    height: 70px;
+    border-width: 4px;
+    border-color: var(--color-medium);
+    border-radius: 40px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-medium);
+    transition: all 0.5s;
+}
+
+.button_delete:hover {
+    background-color: var(--color-medium);
+    color: white;
+    transition: all 0.5s;
+}

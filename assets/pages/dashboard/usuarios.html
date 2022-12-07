@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../css/reset.css">
         <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/usuarios.css">
         <link rel="stylesheet" href="../../css/welcome-page.css">
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400&family=Montserrat:wght@100;200;300;400;600;800;900&display=swap" rel="stylesheet">
+        <script src="../../js/usuarios.js" defer type="module"></script>
         <title>Dashboard Usuários</title>
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../../img/forno-de-pedra.png"/>
     </head>
@@ -30,6 +32,17 @@
                         <a href="usuarios.html" class="option" id="usuarios">Usuários</a>
                         <a href="perfil.html" class="option" id="perfil">Perfil</a>
                     </ul>
+                </div>
+            </div>
+            <div class="user_container">
+                <h1 class="title">ADICIONE UM USUÁRIO</h1>
+                <div class="insert_user_container">
+                    <input type="text" placeholder="Nome" id="name" class="insert_input" required>
+                    <input type="email" placeholder="E-mail" id="email" class="insert_input" required>
+                    <input type="password" placeholder="Senha" id="password" class="insert_input" required>
+                </div>
+                <div class="button_container">
+                    <button class="button_save" id="save">SALVAR</button>
                 </div>
             </div>
         </main>   
