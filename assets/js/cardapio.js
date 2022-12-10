@@ -72,16 +72,57 @@ class card extends HTMLElement {
     //conteúdo que 
     component() {
         const card = document.createElement('div');
-        card.classList.add('card');
-        console.log(this.id)
-        card.innerHTML = `
-            <a href="../pages/character_page.html?id=${this.id}" class="card_container" target="_blank">
-                <div class="img_div">
-                </div>
-                <span class="hero_name">${this.name}</span>
-            </a>
+        card.classList.add('card-pizza');
+        
+        const imgPizza = document.createElement('div')
+        imgPizza.classList.add('img__pizza')
+        card.appendChild(imgPizza)
+
+        const nome_ingrediente = document.createElement('div')
+        nome_ingrediente.classList.add('nome-ingredientes__container')
+        card.appendChild(nome_ingrediente)
+
+        const nome = document.createElement('span')
+        nome.classList.add('nome__pizza')
+        nome.textContent = `${this.nome_pizza}`
+        nome_ingrediente.appendChild(nome)
+
+        const ingredientes = document.createElement('span')
+        ingredientes.classList.add('ingredientes')
+        ingredientes.textContent = `${this.ingredientes}`
+        nome_ingrediente.appendChild(ingredientes)
+
+        const preco_fav = document.createElement('div')
+        preco_fav.classList.add('preco__fav__container')
+        card.appendChild(preco_fav)
+
+        const preco = document.createElement('span')
+        preco.classList.add('preco__pizza')
+        let precoPizza = this.preco
+
+        // estrutura de lógica para preencher as casas decimais do preço
+        if (precoPizza.split('.').length > 1) {
+            if (precoPizza.split('.')[1].length > 1) {
+                preco.textContent = `R$ ${precoPizza.split('.')}`
+            }
+
+            else {
+                preco.textContent = `R$ ${precoPizza.split('.')}0`
+            }
+        }
+        
+        else {
+            preco.textContent = `R$ ${precoPizza},00`
+        }
+
+        preco_fav.appendChild(preco)
+
+        preco_fav.innerHTML += `
+        <input type="checkbox" name="payment" id="card">
+        <label for="card">
+            <i class="fa-solid fa-star"></i>
+        </label>
         `
-        // <img class="hero_image" src="${this.icon}">
 
         return card;
     }
