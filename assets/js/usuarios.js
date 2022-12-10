@@ -3,7 +3,7 @@
 const inserirUsuario = async (usuario) => {
     let responseJSON = {}
 
-    const url = 'http://10.107.144.22:8080/v1/cliente'
+    const url = 'http://localhost:1234/v1/cliente'
 
     const options = {
         method: 'POST',
@@ -34,6 +34,7 @@ const saveUser = async () => {
     }
     
     const save = await inserirUsuario(saveUserJSON)
+    console.log(save)
 
     if (save.statusCode == 201) {
         alert('AAEEEEEEE!!!!! :))))))))')

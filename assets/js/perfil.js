@@ -7,10 +7,10 @@ const idCliente = id01.split('?')[0]
 const editarUsuario = async (usuario, id) => {
     let responseJSON = {}
 
-    const url = `http://10.107.144.22:8080/v1/cliente/${id}`
+    const url = `http://localhost:1234/v1/cliente/${id}`
 
     const options = {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(usuario),
         headers: {
             'content-type': 'application/json'
@@ -18,6 +18,7 @@ const editarUsuario = async (usuario, id) => {
     }
 
     const response = await fetch(url, options)
+    console.log(response)
 
     responseJSON.statusCode = response.status
     responseJSON.json = response.json()
@@ -27,11 +28,15 @@ const editarUsuario = async (usuario, id) => {
 
 const excluirUsuario = async (id) => {
 
-    const url = `http://10.107.144.22:8080/v1/cliente/${id}`
+    const url = `http://localhost:1234/v1/cliente/${id}`
 
-    const response = await fetch(url)
+    const option = {
+        method: 'DELETE'
+    }
+    const response = await fetch(url, option)
 
-    const deletar = await response.json()
+    const deletar = await response.status
+    console.log(deletar)
 
     return deletar;
 }
@@ -49,7 +54,7 @@ const editUser = async () => {
     }
     
     const save = await editarUsuario(editUserJSON, idCliente)
-    console.log(save)
+    console.log(save + ' ' + idCliente)
 
     if (save.statusCode == 201) {
         alert('AAEEEEEEE!!!!! :))))))))')
@@ -61,9 +66,10 @@ const editUser = async () => {
 const deleteUser = async () => {
     
     const excluir = await excluirUsuario(idCliente)
+    console.log(excluir)
 
-    if (excluir.statusCode == 200) {
-        window.location.href = './welcome-page.html'
+    if (excluir   == 200) {
+        window.location.href = './adm.html'
     } else {
         alert('AAAAAAAAAAAAAAHHHHHH!!!! ;((((((((')
     }

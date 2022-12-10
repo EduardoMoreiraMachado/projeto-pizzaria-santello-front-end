@@ -19,3 +19,23 @@
 .img__input {
     display: none;
 }
+
+#input__file {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 15vh;
+    background-color: rgb(13, 55, 92);
+}
+
+#img__preview {
+    height: 15vh;
+    width: 20vw;
+    background-color: blueviolet; 
+}
+
+/* possibilidade de troca para preview:
+#img__preview i {
+    display: none;
+} */

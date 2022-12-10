@@ -1,9 +1,9 @@
 'use strict'
 
-async function validarLogin(login) {
+validarLogin = async (login) => {
     let responseJSON = {}
 
-    const url = 'http://10.107.144.22:8080/v1/loginCliente'
+    const url = 'http://localhost:1234/v1/loginCliente'
 
     const options = {
         method: 'POST',
@@ -25,7 +25,6 @@ const openDashboard = async () => {
 
     const emailADM = document.getElementById('email').value
     const senhaADM = document.getElementById('senha').value
-    const h1 = document.getElementById('teste')
     
     var loginJSON = {
         email: emailADM,
