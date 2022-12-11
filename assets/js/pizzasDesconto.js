@@ -2,7 +2,7 @@
 
 const listarPizzasDesconto = async () => {
 
-    const url = 'http://192.168.1.111:1234/v1/pizzasDesconto'
+    const url = 'http://192.168.1.112:1234/v1/pizzasDesconto'
 
     const response = await fetch(url)
 

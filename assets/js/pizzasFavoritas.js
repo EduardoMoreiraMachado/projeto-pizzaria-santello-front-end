@@ -2,7 +2,7 @@
 
 const listarPizzasFavoritas = async () => {
 
-    const url = 'http://192.168.1.111:1234/v1/pizzasFavoritas'
+    const url = 'http://192.168.1.112:1234/v1/pizzasFavoritas'
 
     const response = await fetch(url)
 
@@ -42,35 +42,47 @@ let rev = 0;
 carousel(rev);
 
 function previousReview() {
+
     rev = rev - 1;
     carousel(rev);
+
 }
 
 function nextReview() {
+
     rev = rev + 2;
     carousel(rev);
+
 }
 
 function carousel(review) {
-    let reviews = document
-        .getElementsByClassName("review__items");
+
+    let reviews = document.getElementsByClassName("review__items");
 
     if (review >= reviews.length) {
+
         review = 0;
         rev = 0;
+
     }
 
     if (review < 0) {
+
         review = reviews.length - 1;
         rev = reviews.length - 1;
+
     }
 
     for (let i = 0; i < reviews.length; i++) {
+
         reviews[i].style.display = "none";
+
     }
 
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
+
         reviews[review + i].style.display = "block";
+
     }
     
 }
