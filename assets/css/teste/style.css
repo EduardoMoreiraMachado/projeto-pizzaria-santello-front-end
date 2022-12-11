@@ -5,7 +5,8 @@ body{
     display: flex;
 }
 
-input[type="checkbox"]{
+button{
+    background-color: transparent;
     -webkit-appearance: none;
 }
 
@@ -20,7 +21,7 @@ i {
     color: #fff1;
 }
 
-input[type="checkbox"]:checked + label i {
+input[type="checkbox"]:click + label i {
 	color: #ffffff;
     -webkit-text-stroke: 0 #fff0;
     transition: 0.5s;

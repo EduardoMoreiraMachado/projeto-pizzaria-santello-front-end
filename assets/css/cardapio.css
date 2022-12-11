@@ -3,3 +3,13 @@
     text-align: center;
     text-transform: uppercase;
 }
+
+.favorito,
+.favorito label,
+.like {
+    display: none;
+}
+
+.favorito label {
+    display: none;
+}
