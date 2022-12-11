@@ -22,7 +22,7 @@ const createCardsPizzas = async (dataPizzas) => {
 
     pizzasAPI.message.forEach(element => {
         pizzasContainer.innerHTML += `
-        <pizza-cardapio class="pizza_cardapio" id_produto="${element.id_produto}" id_pizza="${element.id_pizza} id_categoria="${element.id_categoria}" nome_pizza="${element.nome_produto}" nome_categoria="${element.nome_categoria}" foto="${element.foto}" preco="${element.preco}" qntd_favoritos="${element.qntd_favorito}" ingredientes="${element.ingredientes}" ></pizza-cardapio>
+        <pizza-cardapio class="pizza_cardapio" id_produto="${element.id_produto}" id_pizza="${element.id_pizza}" id_categoria="${element.id_categoria}" nome_pizza="${element.nome_produto}" nome_categoria="${element.nome_categoria}" foto="${element.foto}" preco="${element.preco}" qntd_favoritos="${element.qntd_favorito}" ingredientes="${element.ingredientes}" ></pizza-cardapio>
         `
     });
 }
@@ -142,18 +142,20 @@ class card extends HTMLElement {
         }
 
         preco_fav.appendChild(preco)
-
+        
         var contador
-        console.log(this.qntd_favoritos)
+        var teste = `${this.qntd_favoritos}`
 
-        preco_fav.innerHTML += `
-        <input type="checkbox" name="fav_star" id="fav" class="favorito" onclick="${contador} = parseInt(${this.qntd_favoritos}) + 1; console.log(${contador})">
-        <label for="fav">${contador}
+        // <input type="checkbox" name="fav_star" id="fav" class="favorito" onclick="${contador} = parseInt(${this.qntd_favoritos}) + 1; console.log(${contador})">
+        console.log(this.id_pizza)
+
+        preco_fav.innerHTML += `        
+        <input type="checkbox" name="fav_star" id="fav" class="favorito" onclick="contagemFavorito(${this.qntd_favoritos}, ${this.id_pizza})">
+        <label for="fav">
             <i class="like" id="like">&#10084;</i>
         </label>
-        <script>
-        </script>
         `
+        //console.log(this.qntd_favoritos)
 
         return card;
     }
@@ -161,12 +163,5 @@ class card extends HTMLElement {
 
 customElements.define('pizza-cardapio', card);
 
-// const contagemFavorito = () => {
-//     // const favorito = document.getElementById('like')
-
-//     // if (favorito.checked) {
-//         console.log('essa pizza é foda')
-//     // }
-// }
 
 // const favorito = document.getElementById('like').addEventListener('click', contagemFavorito())
