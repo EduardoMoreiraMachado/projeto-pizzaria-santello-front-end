@@ -8,9 +8,13 @@
         <link rel="stylesheet" href="../../../assets/css/style.css">
         <link rel="stylesheet" href="../../../assets/css/home.css">
         <link rel="stylesheet" href="../../../assets/css/info.css">
+        <link rel="stylesheet" href="../../../assets/css/pizzasDesconto.css">
+        <link rel="stylesheet" href="../../../assets/css/pizzasFavoritas.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;700&family=Montserrat:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
+        <script src="../../js/pizzasDesconto.js" defer type="module"></script>
+        <script src="../../js/pizzasFavoritas.js" defer type="module"></script>
         <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../../img/forno-de-pedra.png"/>
         <title>Santello</title>
@@ -34,7 +38,14 @@
                 </a>
             </div>
         </header>
+
+
+
+
+        
         <main>
+
+
             <div class="home__container">
                 <div class="welcome__container">
                     <img class="icon" src="../../../img/forno-de-pedra.png" alt="">
@@ -81,7 +92,44 @@
                     </div>
                 </div>
             </div>
+            <div class="discount_pizzas_container">
+                <span class="discount_pizzas_title">OFERTAS</span>
+                <p class="discount_pizzas_text">ECONOMIZE FICANDO POR DENTRO DAS NOSSAS PIZZAS EM PROMOÇÃO</p>
+                <div class="discount_pizzas" id="discount"></div>
+            </div>
+            <div class="wave_image"></div>
+
+            <div class="favorite_pizzas_container">
+                <div class="favorite_pizzas_icon_container">
+                    <div class="favorite_pizzas_icon_bar"></div>
+                    <div class="favorite_pizzas_icon">
+                        <img src="../../../img/pizza1.png" alt="" class="icon">
+                    </div>
+                    <div class="favorite_pizzas_icon_bar"></div>
+                </div>
+                <span class="favorite_pizzas_title">PIZZAS FAVORITAS</span>
+                <div class="review">
+                    <div class="review__button">
+                        <button id="prev" onclick="previousReview()">
+                            PREV
+                        </button>
+                    </div>
+                    <div class="favorite_pizzas_cards" id="favorites"></div>
+                    <div class="review__button">
+                        <button id="next" onclick="nextReview()">
+                            NEXT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        
         </main>
+
+
+
+
+
         <footer>
             <div class="contacts-container">
                 <div class="contact-item">

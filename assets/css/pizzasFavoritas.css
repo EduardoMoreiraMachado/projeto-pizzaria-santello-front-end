@@ -1,0 +1,55 @@
+/*
+    --bg-color: #FFF8F0;
+    --detail-dark: #14371F;
+    --detail-medium: #4A7140;
+    --color-light: #E9972D;
+    --color-medium: #C4501B;
+    --color-main: #A0361B;
+
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kolker Brush', cursive;
+    font-family: 'League Spartan', sans-serif;
+*/
+
+.favorite_pizzas_container {
+    height: auto;
+}
+
+.favorite_pizzas_icon_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite_pizzas_icon_bar{
+    width: 43%;
+    height: 5px;
+    background-color: var(--detail-dark);
+}
+
+.favorite_pizzas_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: var(--detail-dark);
+    border-radius: 100px;
+}
+
+.icon {
+    width: 130px;
+    height: 130px;
+}
+
+.favorite_pizzas_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    font-size: 70px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: bold;
+    color: var(--detail-dark);
+}
