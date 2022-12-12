@@ -9,6 +9,9 @@
     font-family: 'Montserrat', sans-serif;
     font-family: 'Kolker Brush', cursive;
     font-family: 'League Spartan', sans-serif;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
 */
 
 .discount_pizzas_container {
@@ -34,6 +37,52 @@
     font-size: 26px;
     font-weight: 400;
     color: white;
+}
+
+.discount_pizzas {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 20px;
+    gap: 30px;
+}
+
+.discount_card {
+    background: linear-gradient(transparent 30%,#fff8f0b7 10%, #fff8f0b7 30%);
+    border-radius: 0px 0px 60px 60px;
+    width: 434px;
+}
+
+.discount_image {
+    width: 180px;
+    height: 180px;
+    border-radius: 200px;
+}
+
+.discount_name {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-main);
+}
+
+.discount_ingredients {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.original_price {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.discount_price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+    font-weight: bolder;
+    color: var(--color-main);
 }
 
 .wave_image {
