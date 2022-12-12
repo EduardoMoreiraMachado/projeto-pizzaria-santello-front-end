@@ -19,7 +19,6 @@ const uploadImage =  async (image, name) => {
 
     const mountainsRef = ref(storage, `teste/${name}.jpg`);
     
-
     await uploadBytes(mountainsRef, image)
 
     return await getDownloadURL(mountainsRef)
