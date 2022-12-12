@@ -17,13 +17,13 @@ import { getStorage, ref, uploadBytes, getDownloadURL  } from "https://www.gstat
 const uploadImage =  async (image, name) => {
     const storage = getStorage(app);
 
-    const mountainsRef = ref(storage, `teste/${name}.jpg`);
+    const mountainsRef = ref(storage, `pizza/${name}.jpg`);
     
     await uploadBytes(mountainsRef, image)
 
     return await getDownloadURL(mountainsRef)
    
-} 
+}
 
 export {
   uploadImage
