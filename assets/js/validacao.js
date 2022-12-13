@@ -1,9 +1,9 @@
 'use strict'
 
-validarLogin = async (login) => {
+const validarLogin = async (login) => {
     let responseJSON = {}
 
-    const url = 'http://localhost:1234/v1/loginCliente'
+    const url = 'http://localhost:1206/v1/loginCliente'
 
     const options = {
         method: 'POST',

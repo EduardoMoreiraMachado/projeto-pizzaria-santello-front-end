@@ -47,7 +47,7 @@ const discountPizzasList = async () => {
         }
     
         let precoDesconto = element.preco_descontado
-        console.log(precoDesconto)
+        //console.log(precoDesconto)
     
         if (precoDesconto.split('.').length > 1) {
     

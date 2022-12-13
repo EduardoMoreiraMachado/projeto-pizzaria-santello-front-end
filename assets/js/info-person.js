@@ -4,8 +4,9 @@ const url = window.location.search.substring(1);
 const id01 = url.split('=')[1]
 const idADM = id01.split('?')[0]
 const nome01 = url.split('=')[2]
-const primeiroNome = nome01.split('%20')[0]
-const segundoNome = nome01.split('%20')[1]
+const nomeURL = nome01.split('%20')
+let nome = nomeURL.replace(',', ' ')
+
 
 const optionsArray = ['pizzas', 'bebidas', 'servicos', 'ingredientes', 'categorias', 'mensagens', 'usuarios', 'perfil']
 
@@ -15,7 +16,7 @@ optionsArray.forEach(element => {
 })
 
 const nomeADM = document.getElementById('nome__adm')
-nomeADM.textContent = `${primeiroNome} ${segundoNome}`
+nomeADM.textContent = nome
 
 const cssNome = nomeADM.style
 cssNome.fontFamily = "'League Spartan', sans-serif"

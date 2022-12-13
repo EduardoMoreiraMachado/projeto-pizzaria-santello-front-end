@@ -2,7 +2,7 @@
 
 const listarMensagens = async () => {
 
-    const url = 'http://10.107.144.22:8080/v1/contatos'
+    const url = 'http://localhost:1206/v1/contatos'
 
     const response = await fetch(url)
 

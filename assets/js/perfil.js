@@ -7,7 +7,7 @@ const idCliente = id01.split('?')[0]
 const editarUsuario = async (usuario, id) => {
     let responseJSON = {}
 
-    const url = `http://localhost:1234/v1/cliente/${id}`
+    const url = `http://localhost:1206/v1/cliente/${id}`
 
     const options = {
         method: 'PUT',
@@ -28,7 +28,7 @@ const editarUsuario = async (usuario, id) => {
 
 const excluirUsuario = async (id) => {
 
-    const url = `http://localhost:1234/v1/cliente/${id}`
+    const url = `http://localhost:1206/v1/cliente/${id}`
 
     const option = {
         method: 'DELETE'

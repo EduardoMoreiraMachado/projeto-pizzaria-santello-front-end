@@ -154,10 +154,11 @@
 
             }
 
-            favoritePizzasList()
-    
             async function carousel(review) {
-                let reviews = await document.getElementsByClassName("review__items");
+                
+                await favoritePizzasList()
+
+                let reviews = document.getElementsByClassName("review__items");
     
                 if (review >= reviews.length) {
                     review = 0;
@@ -171,28 +172,27 @@
 
                 for (let i = 0; i < reviews.length; i++) {
                     reviews[i].style.display = "none";
+                    //reviews[i].parentNode.removeChild(reviews[i])
                 }
 
                 for(let i = 0; i < 3; i++) {
-                console.log(await reviews)
-                    reviews[review + i].style.display = "block";
+                    reviews[review + i].style.display = "flex";
+                    reviews[review + i].style.flexDirection = "column";
                 }
-                // reviews[review].style.display = "block";
-                // reviews[review + 1].style.display = "block";
-                console.log(review)
+                
             }
 
             let rev = 0;
             carousel(rev);
     
-            function previousReview() {
+            async function previousReview() {
                 rev = rev - 1;
-                carousel(rev);
+                await carousel(rev);
             }
     
-            function nextReview() {
+            async function nextReview() {
                 rev = rev + 2;
-                carousel(rev);
+                await carousel(rev);
             }
         </script>
             <div class="services_container">
