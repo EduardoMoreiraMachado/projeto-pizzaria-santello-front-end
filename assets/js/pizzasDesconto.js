@@ -2,7 +2,7 @@
 
 const listarPizzasDesconto = async () => {
 
-    const url = 'http://10.107.144.19:1206/v1/pizzasDesconto'
+    const url = 'http://localhost:1206/v1/pizzasDesconto'
 
     const response = await fetch(url)
 

@@ -17,6 +17,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--bg-color);
+    padding-bottom: 50px;
 }
 
 .favorite_pizzas_icon_container {
@@ -61,13 +62,28 @@
 .review {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--detail-dark);
+    border: none;
+    border-radius: 30px;
+    font-size: 50px;
+    color: white;
 }
 
 .favorite_pizzas_cards {
     display: grid;
     grid-template-columns: auto auto auto;
     padding-top: 20px;
-    gap: 30px;
+    gap: 50px;
 }
 
 .review__items {
@@ -113,4 +129,34 @@
     color: var(--detail-dark);
     text-align: center;
     padding-left: 20px;
+}
+
+.all_pizzas_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 90px;
+    background-color: transparent;
+    border: 6px solid var(--detail-dark);
+    border-radius: 20px;
+    margin-left: 80vw;
+}
+
+.all_pizzas_link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    text-align: center;
+    color: var(--detail-dark);
+}
+
+.all_pizzas_container:hover {
+    background-color: var(--detail-dark);
+    width: 400px;
+    transition: all 0.5s;
+}
+
+.all_pizzas_container:hover
+.all_pizzas_link {
+    color: white;
 }
