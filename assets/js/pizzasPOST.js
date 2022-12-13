@@ -44,6 +44,7 @@ const createCategorias = async function() {
         const option = document.createElement('input')
         option.type = 'radio'
         option.name = 'categoria'
+        option.value = element.id
         
         const text = document.createElement('label')
         text.textContent = element.nome
@@ -87,13 +88,22 @@ const salvarDados = async () => {
     // const opcaoCategoria = document.getElementById('categoria').value
     const desconto = document.getElementById('desconto').value
 
+
+    var radios = document.getElementsByName('categoria');
+    console.log(radios)
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            let idCategoria = radios[i].value;
+        }
+    }
+
     const ingredientesPizza = document.getElementById('ingrediente').value
 
     const pizzaJSON = {
         nome: namePizza,
         preco: precoPizza,
         foto: urlFoto,
-        id_categoria: 1,
+        id_categoria: idCategoria,
         desconto: desconto,
         ingredientes: ingredientesPizza
     };
