@@ -119,6 +119,7 @@
         }
   
         function carousel(review) {
+            
             let reviews = document
                 .getElementsByClassName("review__items");
   
@@ -133,6 +134,7 @@
             for (let i = 0; i < reviews.length; i++) {
                 reviews[i].style.display = "none";
             }
+
             reviews[review].style.display = "block";
         }
     </script>

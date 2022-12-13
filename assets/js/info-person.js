@@ -9,14 +9,8 @@ const nomeURL = nome01.split('%20')
 // nome do usuário, extraído da URL e implmentando o replace global para separar o nome (string) com espaços
 const nome = String(nomeURL).replace(/,/g, ' ')
 
-const optionsArray = ['pizzas', 'bebidas', 'servicos', 'ingredientes', 'categorias', 'mensagens', 'usuarios', 'perfil']
-
-optionsArray.forEach(element => {
-    let link = document.getElementById(`${element}`)
-    link.href = `./${element}.html?${url}`    
-})
-
 const nomeADM = document.getElementById('nome__adm')
+console.log(nome)
 nomeADM.textContent = nome
 
 const cssNome = nomeADM.style
@@ -25,3 +19,10 @@ cssNome.marginLeft = '10%'
 cssNome.fontSize = '3.8rem'
 cssNome.fontWeight = '500'
 cssNome.color = 'var(--color-main)'
+
+const optionsArray = ['pizzas', 'bebidas', 'servicos', 'ingredientes', 'categorias', 'mensagens', 'usuarios', 'perfil']
+
+optionsArray.forEach(element => {
+    let link = document.getElementById(`${element}`)
+    link.href = `./${element}.html?${url}`    
+})

@@ -26,13 +26,22 @@
     align-items: center;
     width: 20vw;
     height: 15vh;
-    background-color: rgb(13, 55, 92);
 }
 
-#img__preview {
+#img_preview {
     height: 15vh;
     width: 20vw;
     background-color: blueviolet; 
+}
+
+.inputs__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio__container {
+    display: flex;
+    gap: 15px;
 }
 
 /* possibilidade de troca para preview:
