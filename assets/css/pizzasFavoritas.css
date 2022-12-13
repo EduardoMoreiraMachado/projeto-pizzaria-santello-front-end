@@ -13,6 +13,10 @@
 
 .favorite_pizzas_container {
     height: auto;
+    background: url('../../img/forno-de-pedra\ \(2\)\ 1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--bg-color);
 }
 
 .favorite_pizzas_icon_container {
@@ -56,6 +60,7 @@
 
 .review {
     display: flex;
+    justify-content: center;
 }
 
 .favorite_pizzas_cards {
@@ -63,4 +68,49 @@
     grid-template-columns: auto auto auto;
     padding-top: 20px;
     gap: 30px;
+}
+
+.review__items {
+    width: 360px;
+    height: 480px;
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    box-shadow: inset 0px 10px 0px 0px var(--detail-dark);
+}
+
+.favorite_image {
+    height: 200px;
+    border-radius: 50px 50px 0px 0px;
+    box-shadow: inset 0px 10px 0px 0px var(--detail-dark);
+}
+
+.favorite_name {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--detail-dark);
+    padding-top: 20px;
+    max-height: 500px;
+    width: 100%;
+}
+
+.favorite_ingredients {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--detail-dark);
+}
+
+.favorite_price {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+    font-weight: bolder;
+    color: var(--detail-dark);
+    text-align: center;
+    padding-left: 20px;
 }

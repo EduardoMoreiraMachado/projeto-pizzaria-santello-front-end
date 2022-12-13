@@ -106,13 +106,13 @@
                 <div class="review">
                     <div class="review__button">
                         <button id="prev" onclick="previousReview()">
-                            PREV
+                            &larr;
                         </button>
                     </div>
                     <div class="favorite_pizzas_cards" id="favorites"></div>
                     <div class="review__button">
                         <button id="next" onclick="nextReview()">
-                            NEXT
+                            &rarr;	
                         </button>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
         <script>
             const listarPizzasFavoritas = async () => {
 
-                const url = 'http://localhost:1206/v1/pizzasFavoritas'
+                const url = 'http://10.107.144.19:1206/v1/pizzasFavoritas'
 
                 const response = await fetch(url)
 
@@ -141,12 +141,37 @@
                     const cardFavorite = document.createElement('div')
                     cardFavorite.classList.add('review__items')
 
-                    cardFavorite.innerHTML = `
-                        <img src="${element.foto}"/>
-                        <h1>${element.nome_produto}</h1>
-                        <p>${element.ingredientes}</p>
-                        <h1>${element.preco}</h1>
-                    `
+                    const favoriteImage = document.createElement('div')
+                    favoriteImage.classList.add('favorite_image')
+                    favoriteImage.style.background = `url(${element.foto})`
+                    favoriteImage.style.backgroundSize = 'cover'
+
+                    const favoriteName = document.createElement('h1')
+                    favoriteName.classList.add('favorite_name')
+                    favoriteName.textContent = element.nome_produto
+
+                    const favoriteIngredients = document.createElement('p')
+                    favoriteIngredients.classList.add('favorite_ingredients')
+                    favoriteIngredients.textContent = element.ingredientes
+
+                    const favoritePrice = document.createElement('h1')
+                    favoritePrice.classList.add('favorite_price')
+                    favoritePrice.textContent = `R$ ${element.preco}`
+
+                    console.log(favoriteImage)
+
+                    cardFavorite.appendChild(favoriteImage)
+                    cardFavorite.appendChild(favoriteName)
+                    cardFavorite.appendChild(favoriteIngredients)
+                    cardFavorite.appendChild(favoritePrice)
+
+                        
+                    // cardFavorite.innerHTML = `
+                    //     <h1 class="favorite_name">${element.nome_produto}</h1>
+                    //     <p class="favorite_ingredients">${element.ingredientes}</p>
+                    //     <h1 class="favorite_price">${element.preco}</h1>
+                    // `
+
 
                     favoritesList.appendChild(cardFavorite)
 

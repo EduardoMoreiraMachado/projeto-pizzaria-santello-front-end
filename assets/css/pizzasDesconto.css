@@ -20,6 +20,7 @@
     align-items: center;
     width: 100%;
     background-color: var(--color-main);
+    padding-top: 50px;
 }
 
 .discount_pizzas_title {
@@ -44,9 +45,20 @@
 }
 
 .discount_card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     background: linear-gradient(transparent 30%,#fff8f0b7 10%, #fff8f0b7 30%);
     border-radius: 0px 0px 60px 60px;
-    width: 434px;
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.card_header {
+    display: flex;
+    align-items: center;
 }
 
 .discount_image {
@@ -57,36 +69,49 @@
 
 .discount_name {
     font-family: 'League Spartan', sans-serif;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
     color: var(--color-main);
+    padding-top: 130px;
+    max-height: 500px;
+    width: 100%;
 }
 
 .discount_ingredients {
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 300;
+    text-align: center;
+    padding-left: 20px;
 }
 
 .original_price {
     font-family: 'League Spartan', sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
     text-decoration: line-through;
+    padding-left: 20px;
 }
 
 .discount_price {
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     font-size: 70px;
     font-weight: bolder;
     color: var(--color-main);
+    text-align: center;
+    padding-left: 20px;
 }
 
 .wave_image {
     width: 100%;
-    height: 300px;
+    height: 30vh;
     background: url('../../../img/wave.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-color: var(--bg-color);
 }
