@@ -2,46 +2,34 @@
 
 import { uploadImage } from "./firebase.js"
 import { createCategorias } from "./categoriasGET.js"
+import { preview } from "./img.js"
 
-await createCategorias(1)
+await createCategorias(2)
 
-const postPizza = async (pizza) => {
-    const dadosPizza = pizza
+const postBebida = async (bebida) => {
+    const dadosBebida = bebida
 
-    const url = 'http://192.168.1.7:1206/v1/pizza'
+    const url = 'http://192.168.1.7:1206/v1/bebida'
 
     const options = {
         method: 'POST',
-        body: JSON.stringify(dadosPizza),
+        body: JSON.stringify(dadosBebida),
         headers: {
             'content-type': 'application/json',
         },
     };
 
     await fetch(url, options);
-
 };
-
-const preview = (urlPreview) => {
-    const imgPreview = document.getElementById('img_preview')
-    console.log(urlPreview)
-    imgPreview.style.background = `url(${urlPreview})`
-    imgPreview.style.backgroundSize = 'cover'
-
-    const icone = document.getElementById('input__file')
-    icone.style.display = 'none'
-}
 
 const salvarDados = async () => {
     const image = document.getElementById('img__input').files[0]
-    const namePizza = document.getElementById('nome').value
-    const nameFile = namePizza.replace(' ','-').toLowerCase()
+    const nameBebida = document.getElementById('nome').value
+    const nameFile = nameBebida.replace(' ','-').toLowerCase()
     
     const urlFoto =  await uploadImage(image, nameFile)
 
-    const precoPizza = document.getElementById('preco').value
-
-    const desconto = document.getElementById('desconto').value
+    const precoBebida = document.getElementById('preco').value
 
     const radios = document.getElementsByName('categoria');
     
@@ -53,30 +41,28 @@ const salvarDados = async () => {
         }
     }
 
-    const ingredientesPizza = document.getElementById('ingrediente').value
+    const volume = document.getElementById('volume').value
 
-    const pizzaJSON = {
-        nome: namePizza,
-        preco: precoPizza,
+    const bebidaJSON = {
+        nome: nameBebida,
+        preco: precoBebida,
         foto: urlFoto,
         id_categoria: idCategoria,
-        desconto: desconto,
-        ingredientes: ingredientesPizza
+        peso_liquido: volume
     };
-
-    console.log(pizzaJSON)
     
-    await postPizza(pizzaJSON)
+    await postBebida(bebidaJSON)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
 
     const image = document.getElementById('img__input').files[0]
-    const namePizza = document.getElementById('nome').value
-    const nameFile = namePizza.replace(' ','-').toLowerCase()
+    const nameBebida = document.getElementById('nome').value
+    const nameFile = nameBebida.replace(' ','-').toLowerCase()
     
     const urlFoto =  await uploadImage(image, nameFile)
 
+    console.log(urlFoto)
     preview(urlFoto)
 
 })
@@ -87,5 +73,3 @@ const previewIMG = document.getElementById('img_preview').addEventListener('clic
     document.getElementById('habilitar_preview').style.display = 'flex'
     document.getElementById('habilitar_preview').style.gap = '15px'
 })
-
-export { createCategorias }

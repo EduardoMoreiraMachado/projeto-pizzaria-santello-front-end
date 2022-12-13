@@ -7,11 +7,11 @@
         <link rel="stylesheet" href="../../css/reset.css">
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/welcome-page.css">
-        <link rel="stylesheet" href="../../css/pizza.css">
-        <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;500;600&family=Montserrat:wght@100;200;300;400;600;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
         <script src="../../js/info-person.js" defer type="module"></script>
         <script src="../../js/pizzasPOST.js" defer type="module"></script>
+        <link rel="stylesheet" href="../../css/pizza.css">
         <title>Dashboard Pizzas</title>
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../../img/forno-de-pedra.png"/>
     </head>
@@ -53,11 +53,15 @@
                                     <input type="file" class="img__input" id="img__input">
                                 </i>
                             </div>
+                            <div class="habilitar__preview" id="habilitar_preview">
+                                <input id="preview_button" class="preview__button" type="radio">
+                                <label class="text__preview">Preview</label>
+                            </div>
                         </label>
                     </div>
                     
                     <div class="categorias__container">
-                        <span class="title__ingrediente">Selecione a categoria</span>
+                        <span class="title__categoria">Selecione a categoria</span>
                         <div class="options" id="options_container">
                         </div>
                     </div>
@@ -65,7 +69,7 @@
 
                 <div class="button__edit" id="button_edit">
                     <button id="editar_pizzas">editar as pizzas</button>
-                    <button id="enviar">enviar</button>
+                    <button id="enviar">salvar</button>
                 </div>
             </div>
         </main>        

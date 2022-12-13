@@ -44,6 +44,10 @@
     gap: 15px;
 }
 
+.habilitar__preview {
+    display: none;
+}
+
 /* possibilidade de troca para preview:
 #img__preview i {
     display: none;

@@ -7,8 +7,13 @@
         <link rel="stylesheet" href="../../css/reset.css">
         <link rel="stylesheet" href="../../css/style.css">
         <link rel="stylesheet" href="../../css/welcome-page.css">
+        <link rel="stylesheet" href="../../css/pizza.css">
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400&family=Montserrat:wght@100;200;300;400;600;800;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
         <script src="../../js/info-person.js" defer type="module"></script>
+        <script src="../../js/categoriasGET.js" defer type="module"></script>
+        <script src="../../js/categoriasPOST.js" defer type="module"></script>
+        <script src="../../js/categoriasUP_DEL.js" defer type="module"></script>
         <title>Dashboard Categorias</title>
         <link rel = "shortcut icon" type = "imagem/x-icon" href = "../../../img/forno-de-pedra.png"/>
     </head>
@@ -25,13 +30,47 @@
                         <a href="#" class="option" id="pizzas">Pizzas</a>
                         <a href="#" class="option" id="bebidas">Bebidas</a>
                         <a href="#" class="option" id="servicos">Serviços</a>
-                        <a href="#" class="option" id="ingredientes">Ingredientes</a>
                         <a href="#" class="option" id="categorias">Categorias</a>
                         <a href="#" class="option" id="mensagens">Mensagens</a>
                         <a href="#" class="option" id="usuarios">Usuários</a>
                         <a href="#" class="option" id="perfil">Perfil</a>
                     </ul>
                 </div>
+            </div>
+
+            <div class="pizza__container">
+                <h1>categorias</h1>
+                <div class="categorias__container" id="categorias_container">
+                    <div class="categoria__pizzas" id="categoria_pizzas"></div>
+                    
+                    <div class="categoria__bebidas" id="categoria_bebidas"></div>
+                </div>
+
+                <div class="edit__container" id="edit_container">
+                    <input type="text" class="input__update" id="input_update" placeholder="Novo nome">
+                    <div class="button__edit" id="button_edit">
+                        <button id="excluir">excluir</button>
+                        <button id="editar">editar</button>
+                    </div>
+                </div>
+                <div class="edit__container" id="edit_container">
+                    <input type="text" class="input__insert" id="input_insert" placeholder="Nova categoria">
+                    <div class="button__save" id="button_save">
+                        <div class="cogigo__tipo" id="tipo1">
+                            <input id="1" value="1" class="tipo" name="codigo_tipo" type="radio">
+                            <label class="text__pizza">Pizza</label>
+                        </div>
+                        <div class="cogigo__tipo" id="tipo2">
+                            <input id="2" value="2" class="tipo" name="codigo_tipo" type="radio">
+                            <label class="text__bebida">Bebida</label>
+                        </div>
+                        <button id="salvar">salvar</button>
+                    </div>
+                </div>
+
+                <button class="create__button" id="create_button">
+                    <i class="fa-regular fa-plus" id="input__file"></i>
+                </button>
             </div>
         </main>   
     </body>
