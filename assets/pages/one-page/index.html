@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="../../../assets/css/info.css">
         <link rel="stylesheet" href="../../../assets/css/pizzasDesconto.css">
         <link rel="stylesheet" href="../../../assets/css/pizzasFavoritas.css">
+        <link rel="stylesheet" href="../../../assets/css/bebidas.css">
+        <link rel="stylesheet" href="../../../assets/css/servicos.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
@@ -105,121 +107,272 @@
                 <span class="favorite_pizzas_title">PIZZAS FAVORITAS</span>
                 <div class="review">
                     <div class="review__button">
-                        <button id="prev" onclick="previousReview()">
+                        <button id="prev" onclick="previousReview()" class="nav_button">
                             &larr;
                         </button>
                     </div>
                     <div class="favorite_pizzas_cards" id="favorites"></div>
                     <div class="review__button">
-                        <button id="next" onclick="nextReview()">
+                        <button id="next" onclick="nextReview()" class="nav_button">
                             &rarr;	
                         </button>
                     </div>
                 </div>
+                <div class="all_pizzas_container">
+                    <a href="../one-page/cardapio-completo.html" class="all_pizzas_link">TODAS AS PIZZAS</a>
+                </div>
             </div>
-        <script>
-            const listarPizzasFavoritas = async () => {
+            <script>
+                const listarPizzasFavoritas = async () => {
 
-                const url = 'http://10.107.144.19:1206/v1/pizzasFavoritas'
+                    const url = 'http://localhost:1206/v1/pizzasFavoritas'
 
-                const response = await fetch(url)
+                    const response = await fetch(url)
 
-                const mensagens = await response.json()
+                    const mensagens = await response.json()
 
-                return mensagens
+                    return mensagens
 
-            }
-
-            const favoritePizzasList = async () => {
-
-                const favoritesList = document.getElementById('favorites')
-
-                const favorites = await listarPizzasFavoritas()
-
-                favorites.forEach(element => {
-
-                    const cardFavorite = document.createElement('div')
-                    cardFavorite.classList.add('review__items')
-
-                    const favoriteImage = document.createElement('div')
-                    favoriteImage.classList.add('favorite_image')
-                    favoriteImage.style.background = `url(${element.foto})`
-                    favoriteImage.style.backgroundSize = 'cover'
-
-                    const favoriteName = document.createElement('h1')
-                    favoriteName.classList.add('favorite_name')
-                    favoriteName.textContent = element.nome_produto
-
-                    const favoriteIngredients = document.createElement('p')
-                    favoriteIngredients.classList.add('favorite_ingredients')
-                    favoriteIngredients.textContent = element.ingredientes
-
-                    const favoritePrice = document.createElement('h1')
-                    favoritePrice.classList.add('favorite_price')
-                    favoritePrice.textContent = `R$ ${element.preco}`
-
-                    console.log(favoriteImage)
-
-                    cardFavorite.appendChild(favoriteImage)
-                    cardFavorite.appendChild(favoriteName)
-                    cardFavorite.appendChild(favoriteIngredients)
-                    cardFavorite.appendChild(favoritePrice)
-
-                        
-                    // cardFavorite.innerHTML = `
-                    //     <h1 class="favorite_name">${element.nome_produto}</h1>
-                    //     <p class="favorite_ingredients">${element.ingredientes}</p>
-                    //     <h1 class="favorite_price">${element.preco}</h1>
-                    // `
-
-
-                    favoritesList.appendChild(cardFavorite)
-
-                })
-
-            }
-
-            async function carousel(review) {
-                
-                await favoritePizzasList()
-
-                let reviews = document.getElementsByClassName("review__items");
-    
-                if (review >= reviews.length) {
-                    review = 0;
-                    rev = 0;
                 }
 
-                if (review < 0) {
-                    review = reviews.length - 1;
-                    rev = reviews.length - 1;
+                const favoritePizzasList = async () => {
+
+                    const favoritesList = document.getElementById('favorites')
+
+                    const favorites = await listarPizzasFavoritas()
+
+                    let precoOriginal
+
+                    favorites.forEach(element => {
+
+                        let preco = element.preco
+
+                        if (preco.split('.').length > 1) {
+                    
+                            if (preco.split('.')[1].length > 1) {
+                    
+                                precoOriginal = `R$ ${preco.split('.')}`
+                    
+                            } else {
+                    
+                                precoOriginal = `R$ ${preco.split('.')}0`
+                    
+                            }
+                    
+                        } else {
+                    
+                            precoOriginal = `R$ ${preco},00`
+                    
+                        }
+
+                        const cardFavorite = document.createElement('div')
+                        cardFavorite.classList.add('review__items')
+
+                        const favoriteImage = document.createElement('div')
+                        favoriteImage.classList.add('favorite_image')
+                        favoriteImage.style.background = `url(${element.foto})`
+                        favoriteImage.style.backgroundSize = 'cover'
+
+                        const favoriteName = document.createElement('h1')
+                        favoriteName.classList.add('favorite_name')
+                        favoriteName.textContent = element.nome_produto
+
+                        const favoriteIngredients = document.createElement('p')
+                        favoriteIngredients.classList.add('favorite_ingredients')
+                        favoriteIngredients.textContent = element.ingredientes
+
+                        const favoritePrice = document.createElement('h1')
+                        favoritePrice.classList.add('favorite_price')
+                        favoritePrice.textContent = `${precoOriginal}`
+
+                        cardFavorite.appendChild(favoriteImage)
+                        cardFavorite.appendChild(favoriteName)
+                        cardFavorite.appendChild(favoriteIngredients)
+                        cardFavorite.appendChild(favoritePrice)
+
+                        favoritesList.appendChild(cardFavorite)
+
+                    })
+
                 }
 
-                for (let i = 0; i < reviews.length; i++) {
-                    reviews[i].style.display = "none";
-                    //reviews[i].parentNode.removeChild(reviews[i])
+                async function carousel(review) {
+                    
+                    await favoritePizzasList()
+
+                    let reviews = document.getElementsByClassName("review__items");
+        
+                    if (review >= reviews.length) {
+                        review = 0;
+                        rev = 0;
+                    }
+
+                    if (review < 0) {
+                        review = reviews.length - 1;
+                        rev = reviews.length - 1;
+                    }
+
+                    for (let i = 0; i < reviews.length; i++) {
+                        reviews[i].style.display = "none";
+                    }
+
+                    for(let i = 0; i < 3; i++) {
+                        reviews[review + i].style.display = "flex";
+                        reviews[review + i].style.flexDirection = "column";
+                    }
+                    
                 }
 
-                for(let i = 0; i < 3; i++) {
-                    reviews[review + i].style.display = "flex";
-                    reviews[review + i].style.flexDirection = "column";
+                let rev = 0;
+                carousel(rev);
+        
+                async function previousReview() {
+                    rev = rev - 1;
+                    await carousel(rev);
                 }
-                
-            }
+        
+                async function nextReview() {
+                    rev = rev + 2;
+                    await carousel(rev);
+                }
+            </script>
+            <div class="drinks_container">
+                <div class="drinks_info">
+                    <span class="drinks_title">BEBIDAS</span>
+                    <p class="drinks_text">Complemente seu pedido com as bebidas do nosso cardápio.</p>
+                </div>
+                <div class="cards_container">
+                    <div class="drinks_cards" id="drinks"></div>
+                    <div class="review2">
+                        <div class="review__button2">
+                            <button id="prev2" onclick="previousReview2()" class="nav_button2">
+                                <
+                            </button>
+                        </div>
+                        <div class="review__button2">
+                            <button id="next2" onclick="nextReview2()" class="nav_button2">
+                                >	
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const listarBebidas = async () => {
 
-            let rev = 0;
-            carousel(rev);
-    
-            async function previousReview() {
-                rev = rev - 1;
-                await carousel(rev);
-            }
-    
-            async function nextReview() {
-                rev = rev + 2;
-                await carousel(rev);
-            }
-        </script>
+                    const url = 'http://localhost:1206/v1/bebidas'
+
+                    const response = await fetch(url)
+
+                    const mensagens = await response.json()
+
+                    return mensagens
+
+                }
+
+                const drinksList = async () => {
+
+                    const drinksList = document.getElementById('drinks')
+
+                    const drinks = await listarBebidas()
+
+                    let precoOriginal
+
+                    drinks.forEach(element => {
+
+                        let preco = element.preco
+
+                        if (preco.split('.').length > 1) {
+                    
+                            if (preco.split('.')[1].length > 1) {
+                    
+                                precoOriginal = `R$ ${preco.split('.')}`
+                    
+                            } else {
+                    
+                                precoOriginal = `R$ ${preco.split('.')}0`
+                    
+                            }
+                    
+                        } else {
+                    
+                            precoOriginal = `R$ ${preco},00`
+                    
+                        }
+
+                        const cardDrink = document.createElement('div')
+                        cardDrink.classList.add('review__items2')
+
+                        const drinkImage = document.createElement('div')
+                        drinkImage.classList.add('drink_image')
+                        drinkImage.style.background = `url(${element.foto})`
+                        drinkImage.style.backgroundSize = 'cover'
+
+                        console.log(element.foto)
+
+                        const drinkName = document.createElement('h1')
+                        drinkName.classList.add('drink_name')
+                        drinkName.textContent = element.nome
+
+                        const drinkLiquid = document.createElement('p')
+                        drinkLiquid.classList.add('drink_liquid')
+                        drinkLiquid.textContent = element.peso_liquido
+
+                        const drinkPrice = document.createElement('h1')
+                        drinkPrice.classList.add('drink_price')
+                        drinkPrice.textContent = `${precoOriginal}`
+
+                        cardDrink.appendChild(drinkImage)
+                        cardDrink.appendChild(drinkName)
+                        cardDrink.appendChild(drinkLiquid)
+                        cardDrink.appendChild(drinkPrice)
+
+                        drinksList.appendChild(cardDrink)
+
+                    })
+
+                }
+
+                async function carousel2(review) {
+                    
+                    await drinksList()
+
+                    let reviews = document.getElementsByClassName("review__items2");
+        
+                    if (review >= reviews.length) {
+                        review = 0;
+                        rev = 0;
+                    }
+
+                    if (review < 0) {
+                        review = reviews.length - 1;
+                        rev = reviews.length - 1;
+                    }
+
+                    for (let i = 0; i < reviews.length; i++) {
+                        reviews[i].style.display = "none";
+                    }
+
+                    for(let i = 0; i < 1; i++) {
+                        reviews[review + i].style.display = "flex";
+                        reviews[review + i].style.flexDirection = "column";
+                    }
+                    
+                }
+
+                let rev2 = 0;
+                carousel2(rev2);
+        
+                async function previousReview2() {
+                    rev2 = rev2 - 1;
+                    await carousel2(rev2);
+                }
+        
+                async function nextReview2() {
+                    rev2 = rev2 + 1;
+                    await carousel2(rev2);
+                }
+            </script>
             <div class="services_container">
                 <span class="services_title">NOSSOS SERVIÇOS</span>
                 <div class="services_cards" id="services"></div>
