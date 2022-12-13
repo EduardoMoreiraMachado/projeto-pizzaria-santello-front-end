@@ -5,8 +5,9 @@ const id01 = url.split('=')[1]
 const idADM = id01.split('?')[0]
 const nome01 = url.split('=')[2]
 const nomeURL = nome01.split('%20')
-let nome = nomeURL.replace(',', ' ')
 
+// nome do usuário, extraído da URL e implmentando o replace global para separar o nome (string) com espaços
+const nome = String(nomeURL).replace(/,/g, ' ')
 
 const optionsArray = ['pizzas', 'bebidas', 'servicos', 'ingredientes', 'categorias', 'mensagens', 'usuarios', 'perfil']
 

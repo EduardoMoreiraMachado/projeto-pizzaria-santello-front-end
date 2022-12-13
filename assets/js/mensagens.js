@@ -17,3 +17,6 @@ const messagesList = async () => {
     const messages = document.getElementById('messages')
 
 } 
+
+const select = document.getElementById('selectCategorias').value
+console.log(select)

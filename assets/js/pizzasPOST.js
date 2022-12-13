@@ -41,7 +41,7 @@ const salvarDados = async () => {
     console.log('namePizza')
     const nameFile = namePizza.replace(' ','-').toLowerCase()
 
-    const urlFoto =  await uploadImage(image, nameFile)
+    var urlFoto =  await uploadImage(image, nameFile)
 
     const precoPizza = document.getElementById('preco').value
 
@@ -60,7 +60,8 @@ const salvarDados = async () => {
     };
     
     await postPizza(pizzaJSON)
-    console.log(pizzaJSON)
 }
 
 const salve = document.getElementById('enviar').addEventListener('click', salvarDados)
+
+const preview = async ()
