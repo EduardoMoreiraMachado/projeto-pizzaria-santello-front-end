@@ -90,10 +90,12 @@ const salvarDados = async () => {
 
 
     var radios = document.getElementsByName('categoria');
-    console.log(radios)
+    
+    let idCategoria
+
     for (var i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
-            let idCategoria = radios[i].value;
+            idCategoria = radios[i].value;
         }
     }
 
@@ -108,6 +110,7 @@ const salvarDados = async () => {
         ingredientes: ingredientesPizza
     };
 
+    console.log(pizzaJSON)
     preview(urlFoto)
     
     await postPizza(pizzaJSON)
