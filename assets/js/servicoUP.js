@@ -17,6 +17,7 @@ const updateServico = async (servico) => {
         body: JSON.stringify(dadosServico),
         headers: {
             'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         },
     };
 
@@ -29,7 +30,10 @@ const excluirServico = async (id) => {
     const url = `http://10.107.144.19:1206/v1/servico/${id}`
 
     const option = {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        }
     }
     const response = await fetch(url, option)
 

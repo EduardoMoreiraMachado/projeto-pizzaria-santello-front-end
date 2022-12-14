@@ -14,6 +14,7 @@ const postCategoria = async (categoria) => {
         body: JSON.stringify(dadosCategoria),
         headers: {
             'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         },
     };
 

@@ -5,7 +5,14 @@ const apiPizzas = async () => {
 
     const urlTodasPizzasAPI = `http://192.168.1.7:1206/v1/todasPizzas`
 
-    const response = await fetch(urlTodasPizzasAPI)
+    const options = {
+        method: 'GET',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        }
+    }
+
+    const response = await fetch(urlTodasPizzasAPI, options)
     pizzasJSON.statusCode = response.status
     const listaTodasPizzas = await response.json()
     pizzasJSON.message = listaTodasPizzas

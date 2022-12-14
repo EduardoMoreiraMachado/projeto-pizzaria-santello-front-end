@@ -13,7 +13,8 @@ const editarUsuario = async (usuario, id) => {
         method: 'PUT',
         body: JSON.stringify(usuario),
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         }
     }
 
@@ -31,7 +32,10 @@ const excluirUsuario = async (id) => {
     const url = `http://localhost:1206/v1/cliente/${id}`
 
     const option = {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        }
     }
     const response = await fetch(url, option)
 

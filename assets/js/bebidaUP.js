@@ -23,6 +23,7 @@ const updateBebida = async (bebida, id) => {
         body: JSON.stringify(dadosBebida),
         headers: {
             'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         },
     };
 
@@ -35,7 +36,10 @@ const excluirBebida = async (id) => {
     const url = `http://10.107.144.19:1206/v1/bebida/${id}`
 
     const option = {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        },
     }
     const response = await fetch(url, option)
 

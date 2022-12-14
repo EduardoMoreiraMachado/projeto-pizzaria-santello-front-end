@@ -15,6 +15,7 @@ const postPizza = async (pizza) => {
         body: JSON.stringify(dadosPizza),
         headers: {
             'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         },
     };
 

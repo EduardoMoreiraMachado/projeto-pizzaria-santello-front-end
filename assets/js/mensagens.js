@@ -23,7 +23,14 @@ const getMensagensByOption = async (opcao) => {
 
     const url = `http://192.168.1.7:1206/v1/contatos/filtro/${opcao}`
     
-    const response = await fetch(url)
+    const options = {
+        method: 'GET',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        }
+    }
+
+    const response = await fetch(url, options)
 
     const mensagens = await response.json()
 

@@ -9,7 +9,8 @@ const validarLogin = async (login) => {
         method: 'POST',
         body: JSON.stringify(login),
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         }
     }
 

@@ -16,6 +16,7 @@ const postBebida = async (bebida) => {
         body: JSON.stringify(dadosBebida),
         headers: {
             'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         },
     };
 

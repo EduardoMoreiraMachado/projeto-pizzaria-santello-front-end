@@ -10,6 +10,7 @@ const inserirUsuario = async (usuario) => {
         body: JSON.stringify(usuario),
         headers: {
             'content-type': 'application/json'
+            'x-access-token': window.localStorage.getItem('token')
         }
     }
 
