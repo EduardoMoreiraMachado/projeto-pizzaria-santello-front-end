@@ -3,7 +3,7 @@
 const inserirContato = async (contato) => {
     let responseJSON = {}
 
-    const url = 'http://localhost:1206/v1/contato'
+    const url = 'http://192.168.1.7:1206/v1/contato'
 
     const options = {
         method: 'POST',

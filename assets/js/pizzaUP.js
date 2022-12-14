@@ -15,7 +15,7 @@ await createCategorias(1)
 const updatePizza = async (pizza, id) => {
     const dadosPizza = pizza
 
-    const url = `http://10.107.144.19:1206/v1/pizza/${id}`
+    const url = `http://192.168.1.7:1206/v1/pizza/${id}`
 
     const options = {
         method: 'PUT',

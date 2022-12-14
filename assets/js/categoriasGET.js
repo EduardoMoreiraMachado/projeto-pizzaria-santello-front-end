@@ -2,7 +2,7 @@
 
 const listarCategorias = async (tipo) => {
 
-    const url = `http://localhost:1206/v1/categorias/${tipo}`
+    const url = `http://192.168.1.7:1206/v1/categorias/${tipo}`
 
     const response = await fetch(url)
 

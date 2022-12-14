@@ -7,7 +7,7 @@ const idCliente = id01.split('?')[0]
 const editarUsuario = async (usuario, id) => {
     let responseJSON = {}
 
-    const url = `http://localhost:1206/v1/cliente/${id}`
+    const url = `http://192.168.1.7:1206/v1/cliente/${id}`
 
     const options = {
         method: 'PUT',

@@ -2,7 +2,7 @@
 
 const editarCategoriaAPI = async (status, id) => {
 
-    const url = `http://localhost:1206/v1/categoriaStatus/${status}/${id}`
+    const url = `http://192.168.1.7:1206/v1/categoriaStatus/${status}/${id}`
 
     const option = {
         method: 'PUT'

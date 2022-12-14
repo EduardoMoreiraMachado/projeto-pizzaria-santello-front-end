@@ -3,7 +3,7 @@
 const apiPizzas = async() => {
     const pizzasJSON = {}
 
-    const urlTodasPizzasAPI = 'http://localhost:1206/v1/pizzas'
+    const urlTodasPizzasAPI = 'http://192.168.1.7:1206/v1/pizzas'
 
     const response = await fetch(urlTodasPizzasAPI)
     pizzasJSON.statusCode = response.status
@@ -16,7 +16,7 @@ const apiPizzas = async() => {
 
 const listarCategorias = async (tipo) => {
 
-    const url = `http://localhost:1206/v1/categorias/${tipo}`
+    const url = `http://192.168.1.7:1206/v1/categorias/${tipo}`
 
     const response = await fetch(url)
 

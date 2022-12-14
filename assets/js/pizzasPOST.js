@@ -8,7 +8,7 @@ await createCategorias(1)
 const postPizza = async (pizza) => {
     const dadosPizza = pizza
 
-    const url = 'http://10.107.144.19:1206/v1/pizza'
+    const url = 'http://192.168.1.7:1206/v1/pizza'
 
     const options = {
         method: 'POST',

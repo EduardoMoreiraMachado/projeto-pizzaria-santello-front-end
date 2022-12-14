@@ -2,7 +2,7 @@
 
 const getAllMensagens = async () => {
 
-    const url = 'http://10.107.144.19:1206/v1/contatos'
+    const url = 'http://192.168.1.7:1206/v1/contatos'
     
     const response = await fetch(url)
 
@@ -14,7 +14,7 @@ const getAllMensagens = async () => {
 
 const getMensagensByOption = async (opcao) => {
 
-    const url = `http://10.107.144.19:1206/v1/contatos/filtro/${opcao}`
+    const url = `http://192.168.1.7:1206/v1/contatos/filtro/${opcao}`
     
     const response = await fetch(url)
 

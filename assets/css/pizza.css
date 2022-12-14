@@ -16,6 +16,21 @@
     font-size: 3.5rem;
 }
 
+.text__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__data {
+    height: 60px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 24px;
+    padding: 16px;
+    color: var(--color-medium);
+    border: none;
+    box-shadow: inset 0px -4px 0px var(--color-medium);
+}
+
 .img__input {
     display: none;
 }
@@ -29,9 +44,14 @@
 }
 
 #img_preview {
-    height: 15vh;
-    width: 20vw;
-    background-color: blueviolet; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 244px;
+    width: 380px;
+    background-color: #fff8f0ce;
+    border-radius: 30px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
 }
 
 .inputs__container {
