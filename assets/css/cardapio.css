@@ -22,7 +22,7 @@
 .pizzas__container{
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     padding: 4.5%;
-    gap: 30px;
+    gap: 70px;
 }

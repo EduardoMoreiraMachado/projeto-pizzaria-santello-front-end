@@ -1,22 +1,26 @@
 'use strict'
 
 const apiPizzas = async() => {
-    const pizzasJSON = {}
 
-    const urlTodasPizzasAPI = 'http://192.168.1.7:1206/v1/pizzas'
+    const urlTodasPizzasAPI = 'http://localhost:1206/v1/pizzas'
 
     const response = await fetch(urlTodasPizzasAPI)
-    pizzasJSON.statusCode = response.status
-    const listaTodasPizzas = await response.json()
-    pizzasJSON.message = listaTodasPizzas
     
-    console.log(pizzasJSON)
-    return pizzasJSON
+    return await response.json()
+}
+
+const apiPizzasByCategoria = async(idCategoria) => {
+
+    const urlTodasPizzasAPI = `http://localhost:1206/v1/pizzasCategoria/${idCategoria}`
+
+    const response = await fetch(urlTodasPizzasAPI)
+    
+    return await response.json()
 }
 
 const listarCategorias = async (tipo) => {
 
-    const url = `http://192.168.1.7:1206/v1/categorias/${tipo}`
+    const url = `http://localhost:1206/v1/categorias/${tipo}`
 
     const response = await fetch(url)
 
@@ -28,8 +32,18 @@ const listarCategorias = async (tipo) => {
 const createDropDown = async function() {
     const select = document.getElementById('categorias')
 
-    const categoria = document.createElement('option')
+    const categorias = await listarCategorias(1)
+
+    categorias.forEach(element => {
+        const categoria = document.createElement('option')
+        categoria.value = element.id
+        categoria.textContent = element.nome
+
+        select.appendChild(categoria)
+    });
 }
+
+await createDropDown()
 
 const createCardsPizzas = async (dataPizzas) => {
     const pizzasAPI = await dataPizzas
@@ -37,7 +51,7 @@ const createCardsPizzas = async (dataPizzas) => {
 
     const pizzasContainer = document.getElementById('pizzas_container')
 
-    pizzasAPI.message.forEach(element => {
+    pizzasAPI.forEach(element => {
         pizzasContainer.innerHTML += `
         <pizza-cardapio class="pizza_cardapio" id_produto="${element.id_produto}" id_pizza="${element.id_pizza}" id_categoria="${element.id_categoria}" nome_pizza="${element.nome_produto}" nome_categoria="${element.nome_categoria}" foto="${element.foto}" preco="${element.preco}" qntd_favoritos="${element.qntd_favorito}" ingredientes="${element.ingredientes}" ></pizza-cardapio>
         `
@@ -46,6 +60,26 @@ const createCardsPizzas = async (dataPizzas) => {
 
 await createCardsPizzas(apiPizzas())
 
+const filtrarPizzas = async function() {
+
+    const select = document.getElementById('categorias').value
+        
+    const pizzasContainer = document.getElementById('pizzas_container')
+
+    if (select > 0) {
+        const pizzasByCategoria = await apiPizzasByCategoria(select)
+
+        pizzasContainer.textContent = ''
+
+        await createCardsPizzas(pizzasByCategoria)
+    }
+    else {
+        pizzasContainer.textContent = ''
+        await createCardsPizzas(apiPizzas())
+    }
+}
+
+document.getElementById('categorias').addEventListener('change', filtrarPizzas)
 
 //classe HTMLElement
 class card extends HTMLElement {
@@ -89,7 +123,7 @@ class card extends HTMLElement {
         .card-pizza {
             width: 100%;
             height: 45vh;
-            border-radius: 40px;
+            border-radius: 65px;
             box-shadow: inset 0px -10px 0px var(--color-main);
         }
 
@@ -106,7 +140,7 @@ class card extends HTMLElement {
         }
         
         i {
-            font-size: 3.2rem;
+            font-size: 4rem;
             -webkit-text-stroke: 4px var(--color-medium);
             color: #fff1;
         }
@@ -124,7 +158,7 @@ class card extends HTMLElement {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            border-radius: 40px 40px 0 0;
+            border-radius: 65px 65px 0 0;
             box-shadow: inset 0px 10px 0px var(--color-main);
         }
 
@@ -136,7 +170,7 @@ class card extends HTMLElement {
 
         .nome__pizza {
             font-family: 'League Spartan', sans-serif;
-            font-size: 2rem;
+            font-size: 2.3rem;
             font-weight: 700;
             text-transform: uppercase;
             text-align: center;
@@ -154,7 +188,7 @@ class card extends HTMLElement {
             width: 100%;
             height: 8vh;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
+            font-size: 1.3rem;
             font-weight: 300;
             text-align: center;
             color: var(--color-main);
@@ -169,7 +203,7 @@ class card extends HTMLElement {
 
         .preco__pizza {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.3rem;
+            font-size: 2.8rem;
             font-weight: bolder;
             color: var(--color-main);
             text-align: center;
