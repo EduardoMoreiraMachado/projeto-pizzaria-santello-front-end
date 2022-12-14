@@ -2,13 +2,20 @@
 
 const getAllMensagens = async () => {
 
-    const url = 'http://192.168.1.7:1206/v1/contatos'
+    const url = 'http://localhost:1206/v1/contatos'
     
-    const response = await fetch(url)
+    const options = {
+        method: 'GET',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        }
+    }
 
-    const mensagens = await response.json()
+    const response = await fetch(url, options)
+    
+    const messages = response.json()
 
-    return mensagens
+    return messages
 
 }
 
@@ -30,7 +37,6 @@ const messagesList = async () => {
     const messagesAPI = await getAllMensagens()
 
     messages.textContent = ''
-
     messagesAPI.forEach(element => {
         let mensagem = element.mensagem
 
@@ -73,7 +79,6 @@ const listarMensagensFiltradas = async (filtro) => {
         const cardMessage = document.createElement('a')
         cardMessage.classList.add('card__message')
         cardMessage.href = `./second-pages/VIEWmensagem.html`
-        console.log('yeste')
 
         const opcao = document.createElement('h3')
         opcao.classList.add('opcao__mensagem')
@@ -93,15 +98,12 @@ const listarMensagensFiltradas = async (filtro) => {
         cardMessage.appendChild(opcao)
         cardMessage.appendChild(message)
 
-        console.log(mensagem[0] + mensagem[290])
-
         messages.appendChild(cardMessage)
     });
 }
 
 const filtrarMensagens = async () => {
     let select = document.getElementById('selectCategorias').value
-    console.log(select)
 
     switch (select) {
         case '0':

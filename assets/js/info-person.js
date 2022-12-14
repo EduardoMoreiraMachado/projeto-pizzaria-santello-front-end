@@ -10,7 +10,6 @@ const nomeURL = nome01.split('%20')
 const nome = String(nomeURL).replace(/,/g, ' ')
 
 const nomeADM = document.getElementById('nome__adm')
-console.log(nome)
 nomeADM.textContent = nome
 
 const cssNome = nomeADM.style
@@ -23,7 +22,6 @@ cssNome.color = 'var(--color-main)'
 const optionsArray = ['pizzas', 'bebidas', 'servicos', 'categorias', 'mensagens', 'usuarios', 'perfil']
 
 optionsArray.forEach(element => {
-    console.log(element)
     let link = document.getElementById(`${element}`)
     link.href = `./${element}.html?${url}`    
 })

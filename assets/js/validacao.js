@@ -3,7 +3,7 @@
 const validarLogin = async (login) => {
     let responseJSON = {}
 
-    const url = 'http://192.168.1.7:1206/v1/loginCliente'
+    const url = 'http://localhost:1206/v1/loginCliente'
 
     const options = {
         method: 'POST',
@@ -35,7 +35,10 @@ const openDashboard = async () => {
     var dadosADM = await validacao.json
 
     if (validacao.statusCode == 200) {
+
+        window.localStorage.setItem('token', dadosADM[0].token);
         window.location.href = `./welcome-page.html?id_adm=${dadosADM[0].id}?nome=${dadosADM[0].nome}`
+        //console.log(window.localStorage.getItem('token'))
     }
 
     else {
