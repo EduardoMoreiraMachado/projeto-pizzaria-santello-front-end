@@ -1,4 +1,87 @@
+.pizza__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.edit_info_container {
+    display: flex;
+    gap: 100px;
+}
+
+.edit_categoria_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.new_categoria_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .categorias__container {
     display: flex;
     justify-content: space-around;
+    gap: 100px;
 }
+
+.categoria__produto {
+    display: flex;
+    flex-direction: row;
+}
+
+#desativar, #ativar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #fff8f0cc;
+    border: none;
+    border-radius: 30px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: white;
+    color: var(--color-main);
+    transition: all 0.5s;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 6px solid var(--color-main);
+}
+
+#desativar:hover, #ativar:hover {
+    background-color: var(--color-main);
+    color: white;
+    transition: all 0.5s;
+}
+
+.input__insert {
+    height: 60px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 24px;
+    padding: 16px;
+    color: var(--color-medium);
+    border: none;
+    box-shadow: inset 0px -4px 0px var(--color-medium);
+}
+
+.options_container {
+    display: flex;
+    gap: 50px;
+}
+
+.codigo__tipo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button__save{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+

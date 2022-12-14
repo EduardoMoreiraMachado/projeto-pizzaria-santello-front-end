@@ -153,6 +153,7 @@ label {
     color: white;
     color: var(--color-main);
     transition: all 0.5s;
+    padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     border: 6px solid var(--color-main);
@@ -177,6 +178,7 @@ label {
     font-size: 28px;
     text-transform: uppercase;
     color: white;
+    padding-top: 10px;
     transition: all 0.5s;
 }
 
@@ -207,4 +209,7 @@ label {
     gap: 30px;
 }
 
-
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+}

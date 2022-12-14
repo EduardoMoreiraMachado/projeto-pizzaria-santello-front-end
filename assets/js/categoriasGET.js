@@ -2,7 +2,7 @@
 
 const listarCategorias = async (tipo) => {
 
-    const url = `http://192.168.1.7:1206/v1/categorias/${tipo}`
+    const url = `http://localhost:1206/v1/categorias/${tipo}`
 
     const response = await fetch(url)
 
@@ -73,8 +73,8 @@ const createAllCategorias = async function() {
         
     pizzasContainer.style.display = 'grid'
     pizzasContainer.style.gridTemplateColumns = 'auto'
-    pizzasContainer.style.gap = '50px'
-    pizzasContainer.style.backgroundColor = 'tomato'
+    pizzasContainer.style.gap = '10px'
+    //pizzasContainer.style.backgroundColor = 'tomato'
     pizzasContainer.style.alignItems = 'start'
 
     const bebidasContainer = document.getElementById('categoria_bebidas')
@@ -100,8 +100,8 @@ const createAllCategorias = async function() {
         
     bebidasContainer.style.display = 'grid'
     bebidasContainer.style.gridTemplateColumns = 'auto'
-    bebidasContainer.style.gap = '50px'
-    bebidasContainer.style.backgroundColor = 'tomato'
+    bebidasContainer.style.gap = '10px'
+    //bebidasContainer.style.backgroundColor = 'tomato'
     bebidasContainer.style.alignItems = 'start'
 }
 

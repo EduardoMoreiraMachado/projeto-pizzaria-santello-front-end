@@ -17,7 +17,7 @@
 .menu__container{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    min-width: 25%;
     height: 100%;
     gap: 24px;
     justify-content: center;

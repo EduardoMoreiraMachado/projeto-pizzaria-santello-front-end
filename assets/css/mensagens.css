@@ -14,6 +14,7 @@
 .message_container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: 8vh;
     width: 100%;
 }
@@ -52,11 +53,44 @@ option {
     background-color: var(--color-main);
 }
 
-.title {
+.title_messages {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    margin-top: 12vh;
     padding-left: 4vh;
     color: var(--color-main);
     font-size: 70px;
     font-family: 'Montserrat', sans-serif;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.messages {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+
+.opcao__mensagem {
+    color: var(--color-main);
+    font-size: 40px;
+}
+
+.card__message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 30vh;
+    background-color: transparent;
+    border: none;
+    border-radius: 30px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    transition: all 0.5s;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 6px solid var(--color-main);
+    gap: 10px;
 }

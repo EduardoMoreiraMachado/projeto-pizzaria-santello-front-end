@@ -41,30 +41,35 @@
 
             <div class="pizza__container">
                 <h1>categorias</h1>
-                <div class="categorias__container" id="categorias_container">
-                    <div class="categoria__pizzas" id="categoria_pizzas"></div>
-                    
-                    <div class="categoria__bebidas" id="categoria_bebidas"></div>
-                </div>
-
-                <div class="edit__container" id="edit_container">
-                    <div class="button__edit" id="button_edit">
-                        <button id="desativar">desativar</button>
-                        <button id="ativar">ativar</button>
+                <div class="edit_info_container">
+                    <div class="edit_categoria_container">
+                        <div class="categorias__container" id="categorias_container">
+                            <div class="categoria__produto" id="categoria_pizzas"></div>
+                            
+                            <div class="categoria__produto" id="categoria_bebidas"></div>
+                        </div>
+                        <div class="edit__container" id="edit_container">
+                            <div class="button__edit" id="button_edit">
+                                <button id="desativar">desativar</button>
+                                <button id="ativar">ativar</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="edit__container" id="edit_container">
-                    <input type="text" class="input__insert" id="input_insert" placeholder="Nova categoria">
-                    <div class="button__save" id="button_save">
-                        <div class="cogigo__tipo" id="tipo1">
-                            <input id="1" value="1" class="tipo" name="codigo_tipo" type="radio">
-                            <label class="text__pizza">Pizza</label>
+                    <div class="new_categoria_container" id="edit_container">
+                        <input type="text" class="input__insert" id="input_insert" placeholder="Nova categoria">
+                        <div class="button__save" id="button_save">
+                            <div class="options_container">
+                                <div class="codigo__tipo" id="tipo1">
+                                    <input id="1" value="1" class="tipo" name="codigo_tipo" type="radio">
+                                    <label class="text__pizza">Pizza</label>
+                                </div>
+                                <div class="codigo__tipo" id="tipo2">
+                                    <input id="2" value="2" class="tipo" name="codigo_tipo" type="radio">
+                                    <label class="text__bebida">Bebida</label>
+                                </div>
+                            </div>
+                            <button id="salvar">salvar</button>
                         </div>
-                        <div class="cogigo__tipo" id="tipo2">
-                            <input id="2" value="2" class="tipo" name="codigo_tipo" type="radio">
-                            <label class="text__bebida">Bebida</label>
-                        </div>
-                        <button id="salvar">salvar</button>
                     </div>
                 </div>
             </div>
