@@ -17,7 +17,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
         <script src="../../js/pizzasDesconto.js" defer type="module"></script>
-        <script src="../../js/pizzasFavoritas.js" defer type="module"></script>
         <script src="../../js/servicos.js" defer type="module"></script>
         <script src="../../js/contatos.js" defer type="module"></script>
         <script src="https://kit.fontawesome.com/ac5338e93e.js" crossorigin="anonymous"></script>
@@ -29,29 +28,29 @@
         <header>
             <span class="logo">Santello</span>
             <div class="options__container">
-                <a href="" class="option__item">
+                <a href="#discount_pizzas_container" class="option__item">
                     <h1 class="option__text">PROMOÇÕES</h1>
                 </a>
-                <a href="" class="option__item">
+                <a href="../one-page/cardapio-completo.html" class="option__item">
                     <h1 class="option__text">CARDÁPIO</h1>
                 </a>
-                <a href="" class="option__item">
+                <a href="#services_container" class="option__item">
                     <h1 class="option__text">SERVIÇOS</h1>
                 </a>
-                <a href="" class="option__item">
+                <a href="#contacts_container" class="option__item">
                     <h1 class="option__text">CONTATOS</h1>
                 </a>
             </div>
         </header>
         <main>
-            <div class="home__container">
+            <section class="home__container">
                 <div class="welcome__container">
                     <img class="icon" src="../../../img/forno-de-pedra.png" alt="">
                     <span class="welcome__title">Conheça a Santello</span>
                     <h1 class="welcome__text">NOSSA ESPECIALIDADE É <strong>TE SERVIR</strong></h1>
                 </div>
-            </div>
-            <div class="info__container">
+            </section>
+            <section class="info__container">
                 <div class="info__text">
                     <div class="text__bar"></div>
                     <span class="info__title_text">QUEM SOMOS</span>
@@ -89,15 +88,15 @@
                         <img src="../../../img/Ellipse 1.svg" alt="" class="pizza__shadow">
                     </div>
                 </div>
-            </div>
-            <div class="discount_pizzas_container">
+            </section>
+            <section class="discount_pizzas_container" id="discount_pizzas_container">
                 <span class="discount_pizzas_title">OFERTAS</span>
                 <p class="discount_pizzas_text">ECONOMIZE FICANDO POR DENTRO DAS NOSSAS PIZZAS EM PROMOÇÃO</p>
                 <div class="discount_pizzas" id="discount"></div>
-            </div>
+            </section>
             <div class="wave_image"></div>
 
-            <div class="favorite_pizzas_container">
+            <section class="favorite_pizzas_container" id="favorite_pizzas_container">
                 <div class="favorite_pizzas_icon_container">
                     <div class="favorite_pizzas_icon_bar"></div>
                     <div class="favorite_pizzas_icon">
@@ -122,11 +121,11 @@
                 <div class="all_pizzas_container">
                     <a href="../one-page/cardapio-completo.html" class="all_pizzas_link">TODAS AS PIZZAS</a>
                 </div>
-            </div>
+            </section>
             <script>
                 const listarPizzasFavoritas = async () => {
 
-                    const url = 'http://localhost:1206/v1/pizzasFavoritas'
+                    const url = 'http://10.107.144.19:1206/v1/pizzasFavoritas'
 
                     const response = await fetch(url)
 
@@ -181,6 +180,8 @@
                         const favoriteIngredients = document.createElement('p')
                         favoriteIngredients.classList.add('favorite_ingredients')
                         favoriteIngredients.textContent = element.ingredientes
+                        console.log(element.ingredientes)
+                        console.log(favoriteIngredients)
 
                         const favoritePrice = document.createElement('h1')
                         favoritePrice.classList.add('favorite_price')
@@ -237,7 +238,7 @@
                     await carousel(rev);
                 }
             </script>
-            <div class="drinks_container">
+            <section class="drinks_container" id="drinks_container">
                 <div class="drinks_info">
                     <span class="drinks_title">BEBIDAS</span>
                     <p class="drinks_text">Complemente seu pedido com as bebidas do nosso cardápio.</p>
@@ -247,21 +248,21 @@
                     <div class="review2">
                         <div class="review__button2">
                             <button id="prev2" onclick="previousReview2()" class="nav_button2">
-                                <
+                                &lsaquo;	
                             </button>
                         </div>
                         <div class="review__button2">
                             <button id="next2" onclick="nextReview2()" class="nav_button2">
-                                >	
+                                &rsaquo;	
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <script>
                 const listarBebidas = async () => {
 
-                    const url = 'http://localhost:1206/v1/bebidas'
+                    const url = 'http://10.107.144.19:1206/v1/bebidas'
 
                     const response = await fetch(url)
 
@@ -317,7 +318,12 @@
 
                         const drinkLiquid = document.createElement('p')
                         drinkLiquid.classList.add('drink_liquid')
-                        drinkLiquid.textContent = element.peso_liquido
+                        let pesoLiquido = element.peso_liquido
+                        if (pesoLiquido.length > 1) {
+                            drinkLiquid.textContent = `${pesoLiquido} ml`
+                        } else {
+                            drinkLiquid.textContent = `${pesoLiquido} L`
+                        }
 
                         const drinkPrice = document.createElement('h1')
                         drinkPrice.classList.add('drink_price')
@@ -374,11 +380,11 @@
                     await carousel2(rev2);
                 }
             </script>
-            <div class="services_container">
+            <section class="services_container" id="services_container">
                 <span class="services_title">NOSSOS SERVIÇOS</span>
                 <div class="services_cards" id="services"></div>
-            </div>
-            <div class="contacts_container">
+            </section>
+            <section class="contacts_container" id="contacts_container">
                 <span class="contacts_title"><strong>Sua opinião significa muito para nós!</strong> Nos conte sua experiência e dê sugestões para melhorias.</span>
                 <div class="data_container">
                     <div class="client_data">
@@ -404,7 +410,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
         <footer>
             <div class="contacts-container">

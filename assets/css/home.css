@@ -28,7 +28,6 @@
 .welcome__title {
     font-family: 'Kolker Brush', cursive;
     font-size: 100px;
-
 }
 
 .welcome__text {
@@ -43,4 +42,30 @@
 
 .description {
     font-family: 'League Spartan', sans-serif;
+}
+
+@media (max-width: 768px) {    
+    .home__container {
+        justify-content: center;
+        padding-left: 0px;
+    }
+
+    .welcome__container {
+        width: 70vw;
+        height: 50vh;
+        gap: 30px;
+    }
+    
+    .icon {
+        width: 200px;
+    }
+    
+    .welcome__title {
+        font-size: 100px;
+        text-align: center;
+    }
+    
+    .welcome__text {
+        font-size: 45px;
+    }
 }

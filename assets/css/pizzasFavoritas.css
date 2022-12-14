@@ -13,7 +13,7 @@
 
 .favorite_pizzas_container {
     height: auto;
-    background: url('../../img/forno-de-pedra\ \(2\)\ 1.svg');
+    background-image: url('../../img/forno-de-pedra\ \(2\)\ 1.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--bg-color);
@@ -75,8 +75,9 @@
     background-color: var(--detail-dark);
     border: none;
     border-radius: 30px;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
+    padding-bottom: 5px;
 }
 
 .favorite_pizzas_cards {
@@ -91,13 +92,14 @@
     height: 480px;
     background-color: var(--bg-color);
     border-radius: 50px;
-    box-shadow: inset 0px 10px 0px 0px var(--detail-dark);
+    /* box-shadow: inset 0px 10px 0px 0px var(--detail-dark); */
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
 }
 
 .favorite_image {
     height: 200px;
     border-radius: 50px 50px 0px 0px;
-    box-shadow: inset 0px 10px 0px 0px var(--detail-dark);
+    /* box-shadow: inset 0px 10px 0px 0px var(--detail-dark); */
 }
 
 .favorite_name {
@@ -113,7 +115,11 @@
 }
 
 .favorite_ingredients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 8vh;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 300;
@@ -124,7 +130,7 @@
 .favorite_price {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-    font-size: 70px;
+    font-size: 50px;
     font-weight: bolder;
     color: var(--detail-dark);
     text-align: center;
@@ -161,4 +167,73 @@
 .all_pizzas_link {
     color: white;
     transition: all 0.5s;
+}
+
+@media (max-width: 768px) {
+    .favorite_pizzas_container {
+        background-image: none;
+        padding-bottom: 50px;
+    }
+    
+    .favorite_pizzas_icon_bar{
+        width: 43%;
+        height: 5px;
+        background-color: var(--detail-dark);
+    }
+    
+    .favorite_pizzas_icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        background-color: var(--detail-dark);
+        border-radius: 300px;
+    }
+    
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .favorite_pizzas_title {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    .review {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .nav_button {
+        rotate: 90deg;
+    }
+    
+    .favorite_pizzas_cards {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 0px;
+    }
+    
+    .review__items {
+        width: 70vw;
+        height: 35vh;
+    }
+    
+    .all_pizzas_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        height: 90px;
+        border-radius: 20px;
+        margin-left: 15vw;
+        margin-top: 30px;
+        transition: all 0.5s;
+    }
 }

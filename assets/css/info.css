@@ -88,3 +88,58 @@
 .pizza__shadow {
     z-index: 1;
 }
+
+@media (max-width: 768px) {
+    .info__container {
+        height: 100vh;
+        gap: 70px;
+    }
+    
+    .info__text {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+    
+    .text__bar {
+        width: 38vw;
+    }
+    
+    .info__title_text {
+        font-size: 2rem;
+        width: 30vw;
+    }
+    
+    .info__items {
+        flex-direction: column;
+        gap: 70px;
+    }
+    
+    .info__message {
+        gap: 36px;
+    }
+    
+    .info__text {
+        width: 80vw;
+        font-size: 50px;
+        text-align:left
+    }
+    
+    .info__social {
+        padding-top: 0px;
+        gap: 10px;
+    }
+    
+    .info__social_message {
+        font-size: 26px;
+    }
+    
+    .pizza {
+        width: 70vw;
+        top: 40px;
+    }
+    
+    .pizza__shadow {
+        width: 70vw;
+    }
+}

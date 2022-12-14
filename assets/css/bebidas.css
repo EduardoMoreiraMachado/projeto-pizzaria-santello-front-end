@@ -69,6 +69,7 @@
     height: 60vh;
     border-radius: 50px;
     gap: 10px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.25);
 }
 
 .drink_image {
@@ -111,8 +112,60 @@
 .nav_button2 {
     width: 100px;
     height: 100px;
-    font-size: 70px;
+    font-size: 100px;
     border: none;
     background-color: transparent;
     color: var(--detail-dark);
+}
+
+@media (max-width: 768px) {
+    .drinks_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        padding-bottom: 100px;
+        gap: 50px;
+    }
+    
+    .drinks_info {
+        width: 100vw;
+        border-radius: 0px;
+        gap: 50px;
+        background-image: none;
+    }
+    
+    .drinks_title {
+        font-size: 80px;
+    }
+    
+    .drinks_text {
+        width: 70vw;
+        font-size: 60px;
+        text-align: left;
+    }
+    
+    .cards_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .drinks_cards {
+        width: 80vw;
+    }
+    
+    .review__items2 {
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .drink_name {
+        padding-top: 20px;
+    }
+    
+    .review2 {
+        gap: 100px;
+    }
 }

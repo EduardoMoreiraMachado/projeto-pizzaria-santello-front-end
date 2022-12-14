@@ -2,7 +2,7 @@
 
 const listarServicos = async () => {
 
-    const url = 'http://localhost:1206/v1/servicos'
+    const url = 'http://10.107.144.19:1206/v1/servicos'
 
     const response = await fetch(url)
 
