@@ -34,8 +34,9 @@ const messagesList = async () => {
     messagesAPI.forEach(element => {
         let mensagem = element.mensagem
 
-        const cardMessage = document.createElement('div')
+        const cardMessage = document.createElement('a')
         cardMessage.classList.add('card__message')
+        cardMessage.href = `./second-pages/VIEWmensagem.html`
 
         const opcao = document.createElement('h3')
         opcao.classList.add('opcao__mensagem')
@@ -55,8 +56,6 @@ const messagesList = async () => {
         cardMessage.appendChild(opcao)
         cardMessage.appendChild(message)
 
-        console.log(mensagem[0] + mensagem[290])
-
         messages.appendChild(cardMessage)
     });
 } 
@@ -71,8 +70,10 @@ const listarMensagensFiltradas = async (filtro) => {
     messagesAPI.forEach(element => {
         let mensagem = element.mensagem
 
-        const cardMessage = document.createElement('div')
+        const cardMessage = document.createElement('a')
         cardMessage.classList.add('card__message')
+        cardMessage.href = `./second-pages/VIEWmensagem.html`
+        console.log('yeste')
 
         const opcao = document.createElement('h3')
         opcao.classList.add('opcao__mensagem')

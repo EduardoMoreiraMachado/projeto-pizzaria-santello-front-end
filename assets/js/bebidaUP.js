@@ -1,7 +1,11 @@
 'use strict'
 
 const url = window.location.search.substring(1);
-const id01 = url.split('=')[1]
+
+let idProd = url.split('=')[1]
+const idProduto = idProd.split('?')[0]
+let idBi = url.split('=')[2]
+const idBebida = idBi.split('?')[0]
 
 import { uploadImage } from "../js/firebase.js"
 import { createCategorias } from "../js/categoriasGET.js"
@@ -9,10 +13,10 @@ import { preview } from "../js/img.js"
 
 await createCategorias(2)
 
-const updateBebida = async (bebida) => {
+const updateBebida = async (bebida, id) => {
     const dadosBebida = bebida
 
-    const url = 'http://192.168.1.7:1206/v1/bebida'
+    const url = `http://localhost:1206/v1/bebida/${id}`
 
     const options = {
         method: 'PUT',
@@ -67,10 +71,13 @@ const salvarDados = async () => {
         preco: precoBebida,
         foto: urlFoto,
         id_categoria: idCategoria,
+        id_produto: idProduto,
         peso_liquido: volume
     };
     
-    await updateBebida(bebidaJSON)
+    await updateBebida(bebidaJSON, idBebida)
+    
+    window.location.reload(true)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
@@ -88,8 +95,10 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 
 const atualizar = document.getElementById('atualizar').addEventListener('click', salvarDados)
 
-const excluir = document.getElementById('enviar').addEventListener('click', async() => {
-    await excluirBebida(id01)
+const excluir = document.getElementById('excluir').addEventListener('click', async() => {
+    await excluirBebida(idBebida)
+
+    window.location.href = `./ALLbebidas.html`
 })
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {

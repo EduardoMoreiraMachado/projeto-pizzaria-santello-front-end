@@ -1,7 +1,8 @@
 
+
 const listarCategorias = async (tipo) => {
 
-    const url = `http://192.168.1.7:1206/v1/categorias/${tipo}`
+    const url = `http://localhost:1206/v1/categorias/${tipo}`
 
     const response = await fetch(url)
 
@@ -12,6 +13,7 @@ const listarCategorias = async (tipo) => {
 
 const createCategorias = async function(tipo) {
     const categoriasAPI = await listarCategorias(tipo)
+
     console.log(categoriasAPI)
     const categoriasContainer = document.getElementById('options_container')
 
@@ -27,7 +29,6 @@ const createCategorias = async function(tipo) {
         const text = document.createElement('label')
         text.textContent = element.nome
 
-        console.log(element.nome)
         optionsContainer.appendChild(option)
         optionsContainer.appendChild(text)
 
@@ -59,10 +60,10 @@ const createAllCategorias = async function() {
         option.name = 'pizza'
         option.value = element.id
         
+        
         const text = document.createElement('label')
         text.textContent = element.nome
 
-        console.log(element.nome)
         optionsContainer.appendChild(option)
         optionsContainer.appendChild(text)
 
@@ -90,7 +91,6 @@ const createAllCategorias = async function() {
         const text = document.createElement('label')
         text.textContent = element.nome
 
-        console.log(element.nome)
         optionsContainer.appendChild(option)
         optionsContainer.appendChild(text)
 
@@ -104,6 +104,6 @@ const createAllCategorias = async function() {
     bebidasContainer.style.alignItems = 'start'
 }
 
-await createAllCategorias()
+//await createAllCategorias()
 
-export { createCategorias }
+export { createCategorias, createAllCategorias }

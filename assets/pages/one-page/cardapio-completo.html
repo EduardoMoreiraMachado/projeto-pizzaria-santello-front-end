@@ -27,9 +27,6 @@
                 <div class="categoria_container">
                     <h1 class="categoria_title">Categoria</h1>
                     <select class="categoria_options" name="categorias" id="categorias">
-                        <option value="all">Todas</option>
-                        <option value="critic">Críticas</option>
-                        <option value="suggestion">Sugestões</option>
                     </select>
                 </div>
 
@@ -42,7 +39,7 @@
                     const atualizarFavoritos = async (qntd_favorito, id) => {
                         let responseJSON = {}
 
-                        const url = `http://localhost:1234/v1/pizzaLikes/${id}`
+                        const url = `http://localhost:1206/v1/pizzaLikes/${id}`
 
                         const options = {
                             method: 'PUT',

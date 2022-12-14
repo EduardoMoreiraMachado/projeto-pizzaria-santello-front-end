@@ -8,7 +8,7 @@ await createCategorias(1)
 const postPizza = async (pizza) => {
     const dadosPizza = pizza
 
-    const url = 'http://192.168.1.7:1206/v1/pizza'
+    const url = 'http://localhost:1206/v1/pizza'
 
     const options = {
         method: 'POST',
@@ -41,7 +41,11 @@ const salvarDados = async () => {
 
     const precoPizza = document.getElementById('preco').value
 
-    const desconto = document.getElementById('desconto').value
+    let desconto = document.getElementById('desconto').value
+
+    if(desconto == '') {
+        desconto = null
+    }
 
     const radios = document.getElementsByName('categoria');
     
@@ -55,6 +59,7 @@ const salvarDados = async () => {
 
     const ingredientesPizza = document.getElementById('ingrediente').value
 
+
     const pizzaJSON = {
         nome: namePizza,
         preco: precoPizza,
@@ -67,6 +72,8 @@ const salvarDados = async () => {
     console.log(pizzaJSON)
     
     await postPizza(pizzaJSON)
+    
+    // window.location.reload(true)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
@@ -81,7 +88,7 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 
 })
 
-const salve = document.getElementById('enviar').addEventListener('click', salvarDados)
+const salve = document.getElementById('salvar').addEventListener('click', salvarDados)
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {
     document.getElementById('habilitar_preview').style.display = 'flex'

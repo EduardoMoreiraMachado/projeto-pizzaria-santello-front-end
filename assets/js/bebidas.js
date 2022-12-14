@@ -9,7 +9,7 @@ await createCategorias(2)
 const postBebida = async (bebida) => {
     const dadosBebida = bebida
 
-    const url = 'http://192.168.1.7:1206/v1/bebida'
+    const url = 'http://localhost:1206/v1/bebida'
 
     const options = {
         method: 'POST',
@@ -52,6 +52,8 @@ const salvarDados = async () => {
     };
     
     await postBebida(bebidaJSON)
+    window.location.reload(true)
+
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        

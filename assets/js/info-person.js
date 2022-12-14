@@ -20,9 +20,10 @@ cssNome.fontSize = '3.8rem'
 cssNome.fontWeight = '500'
 cssNome.color = 'var(--color-main)'
 
-const optionsArray = ['pizzas', 'bebidas', 'servicos', 'ingredientes', 'categorias', 'mensagens', 'usuarios', 'perfil']
+const optionsArray = ['pizzas', 'bebidas', 'servicos', 'categorias', 'mensagens', 'usuarios', 'perfil']
 
 optionsArray.forEach(element => {
+    console.log(element)
     let link = document.getElementById(`${element}`)
     link.href = `./${element}.html?${url}`    
 })

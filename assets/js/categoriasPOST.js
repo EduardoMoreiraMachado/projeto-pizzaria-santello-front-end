@@ -1,9 +1,13 @@
 'use strict'
 
+import { createAllCategorias} from "./categoriasGET.js"
+
+await createAllCategorias()
+
 const postCategoria = async (categoria) => {
     const dadosCategoria = categoria
 
-    const url = 'http://192.168.1.7:1206/v1/categoria'
+    const url = 'http://localhost:1206/v1/categoria'
 
     const options = {
         method: 'POST',
@@ -37,6 +41,8 @@ const salvarCategoria = async function() {
     
     console.log(categoriaJSON)
     await postCategoria(categoriaJSON)
+    
+    window.location.reload(true)
 }
 
 const salve = document.getElementById('salvar').addEventListener('click', salvarCategoria)

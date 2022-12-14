@@ -1,17 +1,21 @@
 'use strict'
 
 const url = window.location.search.substring(1);
-const id01 = url.split('=')[1]
+
+let idProd = url.split('=')[1]
+const idProduto = idProd.split('?')[0]
+let idPi = url.split('=')[2]
+const idPizza = idPi.split('?')[0]
 
 import { uploadImage } from "../js/firebase.js"
 import { createCategorias } from "../js/categoriasGET.js"
 
 await createCategorias(1)
 
-const updatePizza = async (pizza) => {
+const updatePizza = async (pizza, id) => {
     const dadosPizza = pizza
 
-    const url = 'http://192.168.1.7:1206/v1/pizza'
+    const url = `http://localhost:1206/v1/pizza/${id}`
 
     const options = {
         method: 'PUT',
@@ -78,13 +82,14 @@ const salvarDados = async () => {
         preco: precoPizza,
         foto: urlFoto,
         id_categoria: idCategoria,
+        id_produto: idProduto,
         desconto: desconto,
         ingredientes: ingredientesPizza
     };
 
     console.log(pizzaJSON)
     
-    await updatePizza(pizzaJSON)
+    await updatePizza(pizzaJSON, idPizza)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
@@ -101,8 +106,10 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 
 const atualizar = document.getElementById('atualizar').addEventListener('click', salvarDados)
 
-const excluir = document.getElementById('enviar').addEventListener('click', async() => {
+const excluir = document.getElementById('excluir').addEventListener('click', async() => {
     await excluirPizza(id01)
+
+    window.location.href = `./ALLpizzas.html`
 })
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {

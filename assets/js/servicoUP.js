@@ -2,6 +2,7 @@
 
 const url = window.location.search.substring(1);
 const id01 = url.split('=')[1]
+console.log(id01)
 
 import { uploadImage } from "../js/firebase.js"
 import { preview } from "../js/img.js"
@@ -72,8 +73,10 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 
 const atualizar = document.getElementById('atualizar').addEventListener('click', salvarDados)
 
-const excluir = document.getElementById('enviar').addEventListener('click', async() => {
+const excluir = document.getElementById('excluir').addEventListener('click', async() => {
     await excluirServico(id01)
+
+    window.location.href = `./ALLservicos.html`
 })
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {
