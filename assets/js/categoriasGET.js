@@ -8,6 +8,7 @@ const listarCategorias = async (tipo) => {
 
     const mensagens = await response.json()
 
+    console.log(mensagens.categorias)
     return mensagens.categorias
 }
 
@@ -22,6 +23,7 @@ const createCategorias = async function(tipo) {
         optionsContainer.classList.add('radio__container')
 
         const option = document.createElement('input')
+        option.classList.add('input__categoria')
         option.type = 'radio'
         option.name = 'categoria'
         option.value = element.id
@@ -36,9 +38,8 @@ const createCategorias = async function(tipo) {
     });
         
     categoriasContainer.style.display = 'grid'
-    categoriasContainer.style.gridTemplateColumns = 'auto auto auto auto auto'
-    categoriasContainer.style.gap = '50px'
-    categoriasContainer.style.backgroundColor = 'tomato'
+    categoriasContainer.style.gridTemplateColumns = 'auto auto auto'
+    categoriasContainer.style.gap = '30px'
     categoriasContainer.style.alignItems = 'start'
 
 }

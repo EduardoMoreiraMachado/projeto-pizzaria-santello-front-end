@@ -1,3 +1,16 @@
+/*
+    --bg-color: #FFF8F0;
+    --detail-dark: #14371F;
+    --detail-medium: #4A7140;
+    --color-light: #E9972D;
+    --color-medium: #C4501B;
+    --color-main: #A0361B;
+
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Kolker Brush', cursive;
+    font-family: 'League Spartan', sans-serif;
+*/
+
 #main {
     display: flex;
     padding-top: 8vh;
@@ -6,6 +19,8 @@
 .pizza__container{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
 }
 
@@ -21,6 +36,12 @@
     flex-direction: column;
 }
 
+.input__container {
+    display: flex;
+    gap: 90px;
+    padding-bottom: 30px;
+}
+
 .input__data {
     height: 60px;
     font-family: 'League Spartan', sans-serif;
@@ -29,6 +50,15 @@
     color: var(--color-medium);
     border: none;
     box-shadow: inset 0px -4px 0px var(--color-medium);
+}
+
+.input__data::placeholder {
+    color: #a0361b86;
+}
+
+.upload__img{
+    display: flex;
+    justify-content: center;
 }
 
 .img__input {
@@ -57,15 +87,89 @@
 .inputs__container {
     display: flex;
     flex-direction: column;
+    padding-top: 30px;
 }
 
 .radio__container {
     display: flex;
+    align-items: center;
     gap: 15px;
+    padding-top: 40px;
 }
 
 .habilitar__preview {
     display: none;
+}
+
+.text__preview {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 20px;
+    color: var(--color-main);
+}
+
+.title__categoria {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    color: var(--color-main);
+}
+
+label {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 26px;
+}
+
+.button__edit {
+    display: flex;
+    gap: 50px;
+    padding-top: 40px;
+}
+
+#editar_pizzas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #fff8f0cc;
+    border: none;
+    border-radius: 30px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: white;
+    color: var(--color-main);
+    transition: all 0.5s;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 6px solid var(--color-main);
+}
+
+#editar_pizzas:hover {
+    background-color: var(--color-main);
+    color: white;
+    transition: all 0.5s;
+}
+
+#salvar, #enviar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 70px;
+    background-color: var(--color-main);
+    border: none;
+    border-radius: 30px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: white;
+    transition: all 0.5s;
+}
+
+#salvar:hover, #enviar:hover {
+    background-color: #fff8f0cc;
+    color: var(--color-main);
+    transition: all 0.5s;
+    font-size: 32px;
 }
 
 /* possibilidade de troca para preview:

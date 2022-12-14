@@ -47,6 +47,6 @@ input[type="checkbox"]:click + label i {
 }
 
 .img__legenda:hover{
-    box-shadow: inset 0px -44px 0px tomato;
+    box-shadow: inset 0px 44px 0px tomato;
     color: #ffffff;
 }

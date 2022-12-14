@@ -92,5 +92,6 @@ const salve = document.getElementById('salvar').addEventListener('click', salvar
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {
     document.getElementById('habilitar_preview').style.display = 'flex'
+    document.getElementById('habilitar_preview').style.alignItems = 'center'
     document.getElementById('habilitar_preview').style.gap = '15px'
 })
