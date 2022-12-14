@@ -41,23 +41,26 @@
                 <div class="inputs__container" id="inputs_container">
                     <div class="input__container">
                         
-                        <div class="text__info">
+                        <div class="text__info" id="text_info_services">
                             <input type="text" class="input__data" id="nome" placeholder="Nome" required>
                             <textarea cols="30" rows="5" class="input__data" id="descricao" placeholder="Descrição" required></textarea>
                         </div>
-                        <label class="upload__img">
-                            <div class="img__preview" id="img_preview">
-                                <i class="fa-regular fa-plus" id="input__file">
-                                    <input type="file" class="img__input" id="img__input">
-                                </i>
+                        <div class="send__image">
+                            <label class="upload__img">
+                                <div class="img__preview" id="img_preview">
+                                    <i class="fa-regular fa-plus" id="input__file">
+                                        <input type="file" class="img__input" id="img__input">
+                                    </i>
+                                </div>
+                                <div class="habilitar__preview" id="habilitar_preview">
+                                    <input id="preview_button" class="preview__button" type="radio">
+                                    <label class="text__preview">Preview</label>
+                                </div>
+                            </label>
+                            <div class="button__save">
+                                <button id="enviar">salvar</button>
                             </div>
-                            <div class="habilitar__preview" id="habilitar_preview">
-                                <input id="preview_button" class="preview__button" type="radio">
-                                <label class="text__preview">Preview</label>
-                            </div>
-                        </label>
-
-                        <button id="enviar">salvar</button>
+                        </div>
                     </div>
                 </div>
 

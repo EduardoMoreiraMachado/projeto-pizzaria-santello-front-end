@@ -58,11 +58,20 @@
 
 .upload__img{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    padding-bottom: 30px;
 }
 
 .img__input {
     display: none;
+}
+
+.button__save {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: end;
 }
 
 #input__file {
@@ -88,6 +97,12 @@
     display: flex;
     flex-direction: column;
     padding-top: 30px;
+}
+
+.send_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .radio__container {
@@ -171,4 +186,25 @@ label {
     transition: all 0.5s;
     font-size: 32px;
 }
+
+#descricao {
+    width: 600px;
+    height: 280px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 30px;
+    color: #a0361b86;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#text_info_services {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 
