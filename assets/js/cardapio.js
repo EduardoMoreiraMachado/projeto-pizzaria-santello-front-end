@@ -86,6 +86,13 @@ class card extends HTMLElement {
         const style = document.createElement('style');
 
         style.textContent = `
+        .card-pizza {
+            width: 100%;
+            height: 45vh;
+            border-radius: 40px;
+            box-shadow: inset 0px -10px 0px var(--color-main);
+        }
+
         .like {
             font-style: normal;
         }
@@ -99,7 +106,7 @@ class card extends HTMLElement {
         }
         
         i {
-            font-size: 80px;
+            font-size: 3.2rem;
             -webkit-text-stroke: 4px var(--color-medium);
             color: #fff1;
         }
@@ -108,6 +115,64 @@ class card extends HTMLElement {
             color: var(--color-medium);
             -webkit-text-stroke: 0 #fff0;
             transition: 0.5s;
+        }
+
+        .img__pizza {
+            width: 100%;
+            height: 21vh;
+            background: url(${this.foto});
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 40px 40px 0 0;
+            box-shadow: inset 0px 10px 0px var(--color-main);
+        }
+
+        .nome-ingredientes__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nome__pizza {
+            font-family: 'League Spartan', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--color-main);
+            padding-top: 20px;
+            max-height: 500px;
+            width: 100%;
+            max-height: 40px;
+        }
+
+        .ingredientes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 8vh;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            text-align: center;
+            color: var(--color-main);
+        }
+
+        .preco__fav__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .preco__pizza {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.3rem;
+            font-weight: bolder;
+            color: var(--color-main);
+            text-align: center;
         }
         `
         return style;
@@ -137,7 +202,6 @@ class card extends HTMLElement {
 
         const preco_fav = document.createElement('div')
         preco_fav.classList.add('preco__fav__container')
-        card.appendChild(preco_fav)
 
         const preco = document.createElement('span')
         preco.classList.add('preco__pizza')
@@ -159,21 +223,17 @@ class card extends HTMLElement {
         }
 
         preco_fav.appendChild(preco)
-        
-        var contador
-        var teste = `${this.qntd_favoritos}`
 
-        // <input type="checkbox" name="fav_star" id="fav" class="favorito" onclick="${contador} = parseInt(${this.qntd_favoritos}) + 1; console.log(${contador})">
-        console.log(this.id_pizza)
-
-        preco_fav.innerHTML += `        
-        <input type="checkbox" name="fav_star" id="fav" class="favorito" onclick="contagemFavorito(${this.qntd_favoritos}, ${this.id_pizza})">
-        <label for="fav">
-            <i class="like" id="like">&#10084;</i>
-        </label>
+        preco_fav.innerHTML += `
+        <div class="fav__container">      
+            <input type="checkbox" name="fav_star" id="fav" class="favorito" onclick="contagemFavorito(${this.qntd_favoritos}, ${this.id_pizza})">
+            <label for="fav">
+                <i class="like" id="like">&#10084;</i>
+            </label>
+        </div>
         `
-        //console.log(this.qntd_favoritos)
 
+        card.appendChild(preco_fav)
         return card;
     }
 }

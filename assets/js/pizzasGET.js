@@ -36,7 +36,6 @@ const createCardsPizzas = async (dataPizzas) => {
 
 await createCardsPizzas(apiPizzas())
 
-
 //classe HTMLElement
 class card extends HTMLElement {
     //criação das variáveis que vão receber os atributos

@@ -1,6 +1,11 @@
 .title {
-    font-weight: 800;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-left: 4vh;
+    color: var(--color-main);
+    font-size: 70px;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
 }
 
@@ -12,4 +17,12 @@
 
 .favorito label {
     display: none;
+}
+
+.pizzas__container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 4.5%;
+    gap: 30px;
 }

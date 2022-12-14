@@ -40,6 +40,8 @@ const salvarDados = async () => {
     
     const urlFoto =  await uploadImage(image, nameFile)
 
+    console.log(urlFoto)
+
     const precoPizza = document.getElementById('preco').value
 
     let desconto = document.getElementById('desconto').value
@@ -69,12 +71,10 @@ const salvarDados = async () => {
         desconto: desconto,
         ingredientes: ingredientesPizza
     };
-
-    console.log(pizzaJSON)
     
     await postPizza(pizzaJSON)
     
-    // window.location.reload(true)
+    window.location.reload(true)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
@@ -92,7 +92,7 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 const salve = document.getElementById('salvar').addEventListener('click', salvarDados)
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {
-    document.getElementById('habilitar_preview').style.display = 'flex'
-    document.getElementById('habilitar_preview').style.alignItems = 'center'
-    document.getElementById('habilitar_preview').style.gap = '15px'
+    const previewItem = document.getElementById('habilitar_preview').style.display = 'flex'
+    previewItem.style.alignItems = 'center'
+    previewItem.style.gap = '15px'
 })
