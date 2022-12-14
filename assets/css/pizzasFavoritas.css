@@ -141,6 +141,7 @@
     border: 6px solid var(--detail-dark);
     border-radius: 20px;
     margin-left: 80vw;
+    transition: all 0.5s;
 }
 
 .all_pizzas_link {
@@ -159,4 +160,5 @@
 .all_pizzas_container:hover
 .all_pizzas_link {
     color: white;
+    transition: all 0.5s;
 }

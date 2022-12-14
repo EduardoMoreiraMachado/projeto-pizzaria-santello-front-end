@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../../../assets/css/pizzasFavoritas.css">
         <link rel="stylesheet" href="../../../assets/css/bebidas.css">
         <link rel="stylesheet" href="../../../assets/css/servicos.css">
+        <link rel="stylesheet" href="../../../assets/css/contatos.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=League+Spartan:wght@200;300;400;500;600;700&family=Montserrat:wght@100;200;300;400;600;700;900&display=swap" rel="stylesheet">
@@ -379,22 +380,28 @@
             </div>
             <div class="contacts_container">
                 <span class="contacts_title"><strong>Sua opinião significa muito para nós!</strong> Nos conte sua experiência e dê sugestões para melhorias.</span>
-                <div class="client_data">
-                    <input type="text" placeholder="Nome" id="name" class="insert_input" required>
-                    <input type="text" placeholder="Telefone" id="phone" class="insert_input">
-                    <input type="text" placeholder="Celular" id="cel" class="insert_input" required>
-                    <input type="email" placeholder="E-mail" id="email" class="insert_input" required>
-                </div>
-                <div class="contact_message">
-                    <input type="text" placeholder="Nos envie uma mensagem" id="message" class="insert_message_input" required>
-                    <div class="radio_container">
-                        <form>
-                            <input type="radio" name="option" id="suggestion" class="option_item" value="1">
-                            <label for="1">Sugestão</label>
-                            <input type="radio" name="option" id="critic" class="option_item" value="2">
-                            <label for="2">Crítica</label>
-                        </form>
-                        <button type="button" class="message_button" id="send">Enviar</button>
+                <div class="data_container">
+                    <div class="client_data">
+                        <input type="text" placeholder="Nome" id="name" class="insert_input" required>
+                        <input type="text" placeholder="Telefone" id="phone" class="insert_input">
+                        <input type="text" placeholder="Celular" id="cel" class="insert_input" required>
+                        <input type="email" placeholder="E-mail" id="email" class="insert_input" required>
+                    </div>
+                    <div class="contact_message">
+                        <textarea cols="30" rows="5" placeholder="Nos envie uma mensagem" id="message" class="insert_message_input" required></textarea>
+                        <div class="radio_container">
+                            <form>
+                                <div class="options_container">
+                                    <input type="radio" name="option" id="suggestion" class="option_item" value="1">
+                                    <h1 class="option_title">Sugestão</h1>
+                                </div>
+                                <div class="options_container">
+                                    <input type="radio" name="option" id="critic" class="option_item" value="2">
+                                    <h1 class="option_title">Crítica</h1>
+                                </div>
+                            </form>
+                            <button type="button" class="message_button" id="send">Enviar</button>
+                        </div>
                     </div>
                 </div>
             </div>
