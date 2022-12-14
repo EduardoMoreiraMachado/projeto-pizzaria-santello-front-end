@@ -26,7 +26,7 @@ const updateServico = async (servico) => {
 
 const excluirServico = async (id) => {
 
-    const url = `http://localhost:1206/v1/servico/${id}`
+    const url = `http://10.107.144.19:1206/v1/servico/${id}`
 
     const option = {
         method: 'DELETE'

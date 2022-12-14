@@ -7,7 +7,7 @@ await createAllCategorias()
 const postCategoria = async (categoria) => {
     const dadosCategoria = categoria
 
-    const url = 'http://localhost:1206/v1/categoria'
+    const url = 'http://10.107.144.19:1206/v1/categoria'
 
     const options = {
         method: 'POST',

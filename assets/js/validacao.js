@@ -3,7 +3,7 @@
 const validarLogin = async (login) => {
     let responseJSON = {}
 
-    const url = 'http://localhost:1206/v1/loginCliente'
+    const url = 'http://10.107.144.19:1206/v1/loginCliente'
 
     const options = {
         method: 'POST',

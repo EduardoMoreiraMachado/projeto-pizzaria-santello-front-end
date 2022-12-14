@@ -3,7 +3,7 @@
 const apiPizzas = async() => {
     const pizzasJSON = {}
 
-    const urlTodasPizzasAPI = 'http://localhost:1206/v1/pizzas'
+    const urlTodasPizzasAPI = 'http://10.107.144.19:1206/v1/pizzas'
 
     const response = await fetch(urlTodasPizzasAPI)
     pizzasJSON.statusCode = response.status
@@ -12,6 +12,23 @@ const apiPizzas = async() => {
     
     console.log(pizzasJSON)
     return pizzasJSON
+}
+
+const listarCategorias = async (tipo) => {
+
+    const url = `http://10.107.144.19:1206/v1/categorias/${tipo}`
+
+    const response = await fetch(url)
+
+    const mensagens = await response.json()
+
+    return mensagens.categorias
+}
+
+const createDropDown = async function() {
+    const select = document.getElementById('categorias')
+
+    const categoria = document.createElement('option')
 }
 
 const createCardsPizzas = async (dataPizzas) => {

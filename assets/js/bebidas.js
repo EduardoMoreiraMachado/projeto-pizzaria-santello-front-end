@@ -9,7 +9,7 @@ await createCategorias(2)
 const postBebida = async (bebida) => {
     const dadosBebida = bebida
 
-    const url = 'http://localhost:1206/v1/bebida'
+    const url = 'http://10.107.144.19:1206/v1/bebida'
 
     const options = {
         method: 'POST',

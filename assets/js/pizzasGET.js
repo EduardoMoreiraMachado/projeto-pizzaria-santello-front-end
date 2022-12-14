@@ -3,7 +3,7 @@
 const apiPizzas = async () => {
     const pizzasJSON = {}
 
-    const urlTodasPizzasAPI = `http://localhost:1206/v1/todasPizzas`
+    const urlTodasPizzasAPI = `http://10.107.144.19:1206/v1/todasPizzas`
 
     const response = await fetch(urlTodasPizzasAPI)
     pizzasJSON.statusCode = response.status

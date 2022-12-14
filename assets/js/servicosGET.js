@@ -6,7 +6,7 @@ import { preview } from "./img.js"
 const postServico = async (servico) => {
     const dadosServico = servico
 
-    const url = 'http://localhost:1206/v1/servico'
+    const url = 'http://10.107.144.19:1206/v1/servico'
 
     const options = {
         method: 'POST',

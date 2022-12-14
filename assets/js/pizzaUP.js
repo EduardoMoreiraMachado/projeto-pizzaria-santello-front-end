@@ -15,7 +15,7 @@ await createCategorias(1)
 const updatePizza = async (pizza, id) => {
     const dadosPizza = pizza
 
-    const url = `http://localhost:1206/v1/pizza/${id}`
+    const url = `http://10.107.144.19:1206/v1/pizza/${id}`
 
     const options = {
         method: 'PUT',
@@ -31,7 +31,7 @@ const updatePizza = async (pizza, id) => {
 
 const excluirPizza = async (id) => {
 
-    const url = `http://localhost:1206/v1/pizza/${id}`
+    const url = `http://10.107.144.19:1206/v1/pizza/${id}`
 
     const option = {
         method: 'DELETE'
@@ -107,7 +107,7 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 const atualizar = document.getElementById('atualizar').addEventListener('click', salvarDados)
 
 const excluir = document.getElementById('excluir').addEventListener('click', async() => {
-    await excluirPizza(id01)
+    await excluirPizza(idPizza)
 
     window.location.href = `./ALLpizzas.html`
 })
