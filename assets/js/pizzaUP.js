@@ -1,17 +1,20 @@
 'use strict'
 
-import { uploadImage } from "./firebase.js"
-import { createCategorias } from "./categoriasGET.js"
+const url = window.location.search.substring(1);
+const id01 = url.split('=')[1]
+
+import { uploadImage } from "../js/firebase.js"
+import { createCategorias } from "../js/categoriasGET.js"
 
 await createCategorias(1)
 
-const postPizza = async (pizza) => {
+const updatePizza = async (pizza) => {
     const dadosPizza = pizza
 
     const url = 'http://192.168.1.7:1206/v1/pizza'
 
     const options = {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify(dadosPizza),
         headers: {
             'content-type': 'application/json',
@@ -21,6 +24,21 @@ const postPizza = async (pizza) => {
     await fetch(url, options);
 
 };
+
+const excluirPizza = async (id) => {
+
+    const url = `http://localhost:1206/v1/pizza/${id}`
+
+    const option = {
+        method: 'DELETE'
+    }
+    const response = await fetch(url, option)
+
+    const deletar = response.status
+    console.log(deletar)
+
+    return deletar;
+}
 
 const preview = (urlPreview) => {
     const imgPreview = document.getElementById('img_preview')
@@ -66,7 +84,7 @@ const salvarDados = async () => {
 
     console.log(pizzaJSON)
     
-    await postPizza(pizzaJSON)
+    await updatePizza(pizzaJSON)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
@@ -81,7 +99,11 @@ document.getElementById('habilitar_preview').addEventListener ('click', async ()
 
 })
 
-const salve = document.getElementById('enviar').addEventListener('click', salvarDados)
+const atualizar = document.getElementById('atualizar').addEventListener('click', salvarDados)
+
+const excluir = document.getElementById('enviar').addEventListener('click', async() => {
+    await excluirPizza(id01)
+})
 
 const previewIMG = document.getElementById('img_preview').addEventListener('click', () => {
     document.getElementById('habilitar_preview').style.display = 'flex'
