@@ -16,7 +16,7 @@ await createCategorias(2)
 const updateBebida = async (bebida, id) => {
     const dadosBebida = bebida
 
-    const url = `http://10.107.144.19:1206/v1/bebida/${id}`
+    const url = `http://localhost:1206/v1/bebida/${id}`
 
     const options = {
         method: 'PUT',
@@ -32,7 +32,7 @@ const updateBebida = async (bebida, id) => {
 
 const excluirBebida = async (id) => {
 
-    const url = `http://10.107.144.19:1206/v1/bebida/${id}`
+    const url = `http://localhost:1206/v1/bebida/${id}`
 
     const option = {
         method: 'DELETE'

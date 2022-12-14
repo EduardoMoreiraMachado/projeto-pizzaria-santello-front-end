@@ -1,12 +1,16 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBN6kBf-_y_Zy4fzG_f7_BbDQ5BPeoehKg",
-  authDomain: "teste-imagens-67c78.firebaseapp.com",
-  projectId: "teste-imagens-67c78",
-  storageBucket: "teste-imagens-67c78.appspot.com",
-  messagingSenderId: "206172228910",
-  appId: "1:206172228910:web:bc7275ba67d56728f93ebf"
+  apiKey: "AIzaSyDBMRnB2Ci0ZRVpjkqcww1ncKWSrAHRFIk",
+  authDomain: "pizzaria-santello.firebaseapp.com",
+  projectId: "pizzaria-santello",
+  storageBucket: "pizzaria-santello.appspot.com",
+  messagingSenderId: "965805311044",
+  appId: "1:965805311044:web:9ebdc09edaac1d2162a811"
 };
 
 // Initialize Firebase
