@@ -26,7 +26,6 @@ Dashboard é um tipo de interface gráfica de usuário que geralmente fornece vi
 ---
 
 ## Links
-- [Projeto no Figma](https://www.figma.com/file/ON71teYRgF0vBtwP3LOWLB/layout?node-id=1%3A2&t=AYJcOCTJ9bDfpjPk-1)
 - [Código do Front-End](https://github.com/EduardoMoreiraMachado/projeto-pizzaria-santello-front-end)
 
 ---
