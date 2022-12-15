@@ -3,7 +3,7 @@
 const apiPizzas = async () => {
     const pizzasJSON = {}
 
-    const urlTodasPizzasAPI = `http://192.168.1.7:1206/v1/todasPizzas`
+    const urlTodasPizzasAPI = `http://192.168.1.204:1206/v1/todasPizzas`
 
     const options = {
         method: 'GET',
@@ -21,6 +21,23 @@ const apiPizzas = async () => {
     return pizzasJSON
 }
 
+const apiPizza = async (id) => {
+  
+    const urlGetPizzaAPI = `http://192.168.1.7:1206/v1/pizza/${id}` 
+ 
+    const options = { 
+        method: 'GET', 
+        headers: { 
+            'x-access-token': window.localStorage.getItem('token') 
+        } 
+    } 
+    
+    const response = await fetch(urlGetPizzaAPI, options)
+
+    return await response.json()
+
+}
+
 const createCardsPizzas = async (dataPizzas) => {
     const pizzasAPI = await dataPizzas
     // console.log(pizzasAPI.message[0])
@@ -32,6 +49,35 @@ const createCardsPizzas = async (dataPizzas) => {
         <pizza-cardapio class="pizza_cardapio" id_produto="${element.id_produto}" id_pizza="${element.id_pizza}" id_categoria="${element.id_categoria}" nome_pizza="${element.nome_produto}" nome_categoria="${element.nome_categoria}" foto="${element.foto}" preco="${element.preco}" qntd_favoritos="${element.qntd_favorito}" ingredientes="${element.ingredientes}" ></pizza-cardapio>
         `
     });
+}
+
+const createCardPizza = async (id) => { 
+    const idPizza = id
+    const pizzaAPI = await apiPizza(idPizza)
+
+    const pizzasContainer = document.getElementById('todas_pizzas_container') 
+ 
+    pizzaAPI.forEach(element => { 
+        pizzasContainer.innerHTML += ` 
+        <pizza-cardapio class="pizza_cardapio" id_produto="${element.id_produto}" id_pizza="${element.id_pizza}" id_categoria="${element.id_categoria}" nome_pizza="${element.nome_produto}" nome_categoria="${element.nome_categoria}" foto="${element.foto}" preco="${element.preco}" qntd_favoritos="${element.qntd_favorito}" ingredientes="${element.ingredientes}" ></pizza-cardapio> 
+        ` 
+    }); 
+}
+
+const searchProdutos = async function () {
+const inputData = docment.getElementById('search_params').value
+
+    const cards = document.getElementsByClassName('pizza_cardapio')
+
+    cards.forEach = (element => {
+        const nomeProduto = element.nome_pizza
+        
+        if(inputData.includes(nomeProduto)) {
+            await createCardPizzas(element.id_pizza)
+
+            await apiPizza()
+        }
+    })
 }
 
 await createCardsPizzas(apiPizzas())
@@ -74,7 +120,27 @@ class card extends HTMLElement {
         const style = document.createElement('style');
 
         style.textContent = `
-        
+        .card-pizza {
+            text-decoration: none;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            width: 30%;
+            height: 32%;
+            color: transparent;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 1.5rem;
+            background: url(${this.foto})
+            background-repeat: no-repeat;
+            padding-bottom: 12px;
+            border-radius: 30px;
+            }
+            
+        . card-pizza:hover {
+            box-shadow: inset 0px -50px 0px var(--color-medium);
+            color: var(--bg-color);
+        }            
         `
         return style;
     }
