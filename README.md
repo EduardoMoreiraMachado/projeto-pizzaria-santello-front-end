@@ -32,5 +32,4 @@ Dashboard é um tipo de interface gráfica de usuário que geralmente fornece vi
 ---
 
 ## Autores
-[Eduardo Moreira](https://github.com/EduardoMoreiraMachado)
-[Marina Santello](https://github.com/MarinaSantello)
+[Eduardo Moreira](https://github.com/EduardoMoreiraMachado) e [Marina Santello](https://github.com/MarinaSantello)
