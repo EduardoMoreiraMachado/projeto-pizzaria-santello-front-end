@@ -2,8 +2,14 @@
 
 Projeto construido durante as aulas de Programação Web Front-End, Back-End e Banco de Dados no curso de Desenvolvimento de Sistemas do [SENAI Jandira](https://jandira.sp.senai.br/), com orientação do Prof. [Fernando Leonid](https://github.com/fernandoleonid) e Prof. Marcel.
 
+## Links do projeto
+- [One page](marina.12soft.com.br)
+- [Dashboard](marina.12soft.com.br/dashboard)
+
+---
+
 ## Qual era o objetivo do projeto?
-O objetivo era criar uma landing page e um dashboard de uma pizzaria fictícia com banco de dados, API e integração com Front-End tendo como base o design feito no figma. As ferramentas utilizadas foram MySQL Workbench, Node.js, Prisma e as linguagens foram MySQL, JavaScript, HTML e CSS.
+O objetivo era criar uma one page e um dashboard de uma pizzaria fictícia com banco de dados, API e integração com Front-End tendo como base o design feito no figma. As ferramentas utilizadas foram MySQL Workbench, Node.js, Prisma e as linguagens foram MySQL, JavaScript, HTML e CSS.
 
 ---
 
