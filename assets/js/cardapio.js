@@ -2,7 +2,7 @@
 
 const apiPizzas = async() => {
 
-    const urlTodasPizzasAPI = 'http://localhost:1206/v1/pizzas'
+    const urlTodasPizzasAPI = 'http://192.168.1.204:1206/v1/pizzas'
 
     const response = await fetch(urlTodasPizzasAPI)
     
@@ -11,7 +11,7 @@ const apiPizzas = async() => {
 
 const apiPizzasByCategoria = async(idCategoria) => {
 
-    const urlTodasPizzasAPI = `http://localhost:1206/v1/pizzasCategoria/${idCategoria}`
+    const urlTodasPizzasAPI = `http://192.168.1.204:1206/v1/pizzasCategoria/${idCategoria}`
 
     const response = await fetch(urlTodasPizzasAPI)
     
@@ -20,7 +20,7 @@ const apiPizzasByCategoria = async(idCategoria) => {
 
 const listarCategorias = async (tipo) => {
 
-    const url = `http://localhost:1206/v1/categorias/${tipo}`
+    const url = `http://192.168.1.204:1206/v1/categorias/${tipo}`
 
     const response = await fetch(url)
 
@@ -121,7 +121,7 @@ class card extends HTMLElement {
 
         style.textContent = `
         .card-pizza {
-            width: 100%;
+            width: 20vw;
             height: 45vh;
             border-radius: 65px;
             box-shadow: inset 0px -10px 0px var(--color-main);

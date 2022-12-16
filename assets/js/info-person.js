@@ -1,6 +1,7 @@
 'use strict'
 
 const url = window.location.search.substring(1);
+console.log(url)
 const id01 = url.split('=')[1]
 const idADM = id01.split('?')[0]
 const nome01 = url.split('=')[2]

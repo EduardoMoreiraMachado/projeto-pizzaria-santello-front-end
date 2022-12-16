@@ -23,7 +23,7 @@ const apiPizzas = async () => {
 
 const apiPizza = async (id) => {
   
-    const urlGetPizzaAPI = `http://192.168.1.7:1206/v1/pizza/${id}` 
+    const urlGetPizzaAPI = `http://192.168.1.204:1206/v1/pizza/${id}` 
  
     const options = { 
         method: 'GET', 
@@ -43,6 +43,10 @@ const createCardsPizzas = async (dataPizzas) => {
     // console.log(pizzasAPI.message[0])
 
     const pizzasContainer = document.getElementById('todas_pizzas_container')
+    const cssPizza = pizzasContainer.style
+    cssPizza.display = 'grid'
+    cssPizza.gridTemplateColumns = 'auto auto auto auto'
+    cssPizza.gap = '50px'
 
     pizzasAPI.message.forEach(element => {
         pizzasContainer.innerHTML += `
@@ -73,9 +77,9 @@ const inputData = docment.getElementById('search_params').value
         const nomeProduto = element.nome_pizza
         
         if(inputData.includes(nomeProduto)) {
-            await createCardPizzas(element.id_pizza)
+            // await createCardPizzas(element.id_pizza)
 
-            await apiPizza()
+            // await apiPizza()
         }
     })
 }
@@ -123,22 +127,24 @@ class card extends HTMLElement {
         .card-pizza {
             text-decoration: none;
             display: flex;
-            align-items: baseline;
+            align-items: end;
+            font-family: 'Montserrat', sans-serif;        
             justify-content: center;
-            width: 30%;
-            height: 32%;
+            width: 16vw;
+            height: 30vh;
             color: transparent;
             text-transform: uppercase;
             font-weight: bolder;
             font-size: 1.5rem;
-            background: url(${this.foto})
+            background: url(${this.foto});
             background-repeat: no-repeat;
+            background-size: cover;
             padding-bottom: 12px;
             border-radius: 30px;
-            }
+        }
             
-        . card-pizza:hover {
-            box-shadow: inset 0px -50px 0px var(--color-medium);
+        .card-pizza:hover {
+            box-shadow: inset 0px -60px 0px var(--color-medium);
             color: var(--bg-color);
         }            
         `

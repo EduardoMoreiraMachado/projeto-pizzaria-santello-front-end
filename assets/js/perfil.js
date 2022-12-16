@@ -7,7 +7,7 @@ const idCliente = id01.split('?')[0]
 const editarUsuario = async (usuario, id) => {
     let responseJSON = {}
 
-    const url = `http://192.168.1.7:1206/v1/cliente/${id}`
+    const url = `http://192.168.1.204:1206/v1/cliente/${id}`
 
     const options = {
         method: 'PUT',
@@ -29,7 +29,7 @@ const editarUsuario = async (usuario, id) => {
 
 const excluirUsuario = async (id) => {
 
-    const url = `http://localhost:1206/v1/cliente/${id}`
+    const url = `http://192.168.1.204:1206/v1/cliente/${id}`
 
     const option = {
         method: 'DELETE',
@@ -61,9 +61,7 @@ const editUser = async () => {
     console.log(save + ' ' + idCliente)
 
     if (save.statusCode == 201) {
-        alert('AAEEEEEEE!!!!! :))))))))')
-    } else {
-        alert('AAAAAAAAAAAAAAHHHHHH!!!! ;((((((((')
+        alert('Dados editados com sucesso.')
     }
 }
 
@@ -74,8 +72,6 @@ const deleteUser = async () => {
 
     if (excluir   == 200) {
         window.location.href = './adm.html'
-    } else {
-        alert('AAAAAAAAAAAAAAHHHHHH!!!! ;((((((((')
     }
 }
 

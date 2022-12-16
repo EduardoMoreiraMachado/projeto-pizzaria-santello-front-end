@@ -6,13 +6,14 @@ import { preview } from "./img.js"
 const postServico = async (servico) => {
     const dadosServico = servico
 
-    const url = 'http://192.168.1.7:1206/v1/servico'
+    const url = 'http://192.168.1.204:1206/v1/servico'
 
     const options = {
         method: 'POST',
         body: JSON.stringify(dadosServico),
         headers: {
             'content-type': 'application/json',
+            'x-access-token': window.localStorage.getItem('token')
         },
     };
 
@@ -36,6 +37,8 @@ const salvarDados = async () => {
     
     console.log(servicoJSON)
     await postServico(servicoJSON)
+    
+    window.location.reload(true)
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        

@@ -10,7 +10,7 @@ import { preview } from "../js/img.js"
 const updateServico = async (servico) => {
     const dadosServico = servico
 
-    const url = 'http://192.168.1.7:1206/v1/servico'
+    const url = 'http://192.168.1.204:1206/v1/servico'
 
     const options = {
         method: 'PUT',
@@ -27,7 +27,7 @@ const updateServico = async (servico) => {
 
 const excluirServico = async (id) => {
 
-    const url = `http://10.107.144.19:1206/v1/servico/${id}`
+    const url = `http://192.168.1.204:1206/v1/servico/${id}`
 
     const option = {
         method: 'DELETE',
@@ -60,6 +60,8 @@ const salvarDados = async () => {
     
     console.log(servicoJSON)
     await updateServico(servicoJSON)
+    
+    window.location.href = `./ALLservicos.html`
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        

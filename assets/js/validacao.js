@@ -3,7 +3,7 @@
 const validarLogin = async (login) => {
     let responseJSON = {}
 
-    const url = 'http://192.168.1.7:1206/v1/loginCliente'
+    const url = 'http://192.168.1.204:1206/v1/loginCliente'
 
     const options = {
         method: 'POST',
@@ -43,7 +43,7 @@ const openDashboard = async () => {
     }
 
     else {
-        alert('email ou senha incorreto(s)')
+        alert('E-mail ou senha incorreto(s)')
     }
 }
 

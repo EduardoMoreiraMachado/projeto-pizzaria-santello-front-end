@@ -3,7 +3,7 @@
 const inserirContato = async (contato) => {
     let responseJSON = {}
 
-    const url = 'http://192.168.1.7:1206/v1/contato'
+    const url = 'http://192.168.1.204:1206/v1/contato'
 
     const options = {
         method: 'POST',
@@ -61,9 +61,9 @@ const saveContact = async () => {
     console.log(save)
 
     if (save.statusCode == 201) {
-        alert('AAEEEEEEE!!!!! :))))))))')
-    } else {
-        alert('AAAAAAAAAAAAAAHHHHHH!!!! ;((((((((')
+        alert('Sua mensagem foi enviada. Muito obrigada por contribuir com a sua opinião.')
+    
+        // window.location.reload(true)
     }
 }
 

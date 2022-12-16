@@ -2,7 +2,7 @@
 
 const editarCategoriaAPI = async (status, id) => {
 
-    const url = `http://192.168.1.7:1206/v1/categoriaStatus/${status}/${id}`
+    const url = `http://192.168.1.204:1206/v1/categoriaStatus/${status}/${id}`
 
     const option = {
         method: 'PUT',
@@ -27,6 +27,8 @@ const desativarCategoria = async function() {
     }
 
     await editarCategoriaAPI(false, id)
+    
+    window.location.reload(true)
 }
 
 const ativarCategoria = async function() {
@@ -43,6 +45,8 @@ const ativarCategoria = async function() {
     }
 
     await editarCategoriaAPI(true, id)
+    
+    window.location.reload(true)
 }
 
 const desativar = document.getElementById('desativar').addEventListener('click', desativarCategoria)

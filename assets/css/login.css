@@ -80,6 +80,11 @@ input {
     justify-content: flex-end;
 }
 
+.div__button a {
+    display: flex;
+    justify-content: center;
+}
+
 .button__enter {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;

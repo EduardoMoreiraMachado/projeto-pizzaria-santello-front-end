@@ -84,10 +84,13 @@
     display: grid;
     grid-template-columns: auto auto auto;
     padding-top: 20px;
-    gap: 50px;
+    gap: 80px;
 }
 
 .review__items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     width: 360px;
     height: 480px;
     background-color: var(--bg-color);
@@ -109,7 +112,6 @@
     text-transform: uppercase;
     text-align: center;
     color: var(--detail-dark);
-    padding-top: 20px;
     max-height: 500px;
     width: 100%;
 }

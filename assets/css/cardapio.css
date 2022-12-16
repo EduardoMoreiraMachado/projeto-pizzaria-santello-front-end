@@ -20,6 +20,7 @@
 }
 
 .pizzas__container{
+    min-height:55vh;
     width: 100%;
     display: grid;
     grid-template-columns: auto auto auto auto;

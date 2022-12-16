@@ -6,6 +6,7 @@ let idProd = url.split('=')[1]
 const idProduto = idProd.split('?')[0]
 let idBi = url.split('=')[2]
 const idBebida = idBi.split('?')[0]
+console.log(idBebida + 'dsdf')
 
 import { uploadImage } from "../js/firebase.js"
 import { createCategorias } from "../js/categoriasGET.js"
@@ -16,7 +17,7 @@ await createCategorias(2)
 const updateBebida = async (bebida, id) => {
     const dadosBebida = bebida
 
-    const url = `http://192.168.1.7:1206/v1/bebida/${id}`
+    const url = `http://192.168.1.204:1206/v1/bebida/${id}`
 
     const options = {
         method: 'PUT',
@@ -33,7 +34,7 @@ const updateBebida = async (bebida, id) => {
 
 const excluirBebida = async (id) => {
 
-    const url = `http://10.107.144.19:1206/v1/bebida/${id}`
+    const url = `http://192.168.1.204:1206/v1/bebida/${id}`
 
     const option = {
         method: 'DELETE',
@@ -81,7 +82,7 @@ const salvarDados = async () => {
     
     await updateBebida(bebidaJSON, idBebida)
     
-    window.location.reload(true)
+    window.location.href = `./ALLbebidas.html`
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        

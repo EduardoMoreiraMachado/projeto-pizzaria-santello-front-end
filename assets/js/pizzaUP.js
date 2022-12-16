@@ -1,6 +1,7 @@
 'use strict'
 
 const url = window.location.search.substring(1);
+console.log(url)
 
 let idProd = url.split('=')[1]
 const idProduto = idProd.split('?')[0]
@@ -9,13 +10,14 @@ const idPizza = idPi.split('?')[0]
 
 import { uploadImage } from "../js/firebase.js"
 import { createCategorias } from "../js/categoriasGET.js"
+import { preview } from "../js/img.js"
 
 await createCategorias(1)
 
 const updatePizza = async (pizza, id) => {
     const dadosPizza = pizza
 
-    const url = `http://192.168.1.7:1206/v1/pizza/${id}`
+    const url = `http://192.168.1.204:1206/v1/pizza/${id}`
 
     const options = {
         method: 'PUT',
@@ -32,10 +34,13 @@ const updatePizza = async (pizza, id) => {
 
 const excluirPizza = async (id) => {
 
-    const url = `http://10.107.144.19:1206/v1/pizza/${id}`
+    const url = `http://192.168.1.204:1206/v1/pizza/${id}`
 
     const option = {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'x-access-token': window.localStorage.getItem('token')
+        }
     }
     const response = await fetch(url, option)
 
@@ -43,16 +48,6 @@ const excluirPizza = async (id) => {
     console.log(deletar)
 
     return deletar;
-}
-
-const preview = (urlPreview) => {
-    const imgPreview = document.getElementById('img_preview')
-    console.log(urlPreview)
-    imgPreview.style.background = `url(${urlPreview})`
-    imgPreview.style.backgroundSize = 'cover'
-
-    const icone = document.getElementById('input__file')
-    icone.style.display = 'none'
 }
 
 const salvarDados = async () => {
@@ -64,8 +59,6 @@ const salvarDados = async () => {
 
     const precoPizza = document.getElementById('preco').value
 
-    const desconto = document.getElementById('desconto').value
-
     const radios = document.getElementsByName('categoria');
     
     let idCategoria
@@ -74,6 +67,12 @@ const salvarDados = async () => {
         if (radios[i].checked) {
             idCategoria = radios[i].value;
         }
+    }
+
+    let desconto = document.getElementById('desconto').value
+
+    if(desconto == '') {
+        desconto = null
     }
 
     const ingredientesPizza = document.getElementById('ingrediente').value
@@ -88,27 +87,28 @@ const salvarDados = async () => {
         ingredientes: ingredientesPizza
     };
 
-    console.log(pizzaJSON)
     
     await updatePizza(pizzaJSON, idPizza)
+    
+    window.location.href = `./ALLpizzas.html`
 }
 
 document.getElementById('habilitar_preview').addEventListener ('click', async () => {        
 
     const image = document.getElementById('img__input').files[0]
-    const namePizza = document.getElementById('nome').value
-    const nameFile = namePizza.replace(' ','-').toLowerCase()
+    const nameServico = document.getElementById('nome').value
+    const nameFile = nameServico.replace(' ','-').toLowerCase()
     
     const urlFoto =  await uploadImage(image, nameFile)
 
+    console.log(urlFoto)
     preview(urlFoto)
 
 })
-
 const atualizar = document.getElementById('atualizar').addEventListener('click', salvarDados)
 
 const excluir = document.getElementById('excluir').addEventListener('click', async() => {
-    await excluirPizza(idPizza)
+    console.log(await excluirPizza(idPizza))
 
     window.location.href = `./ALLpizzas.html`
 })

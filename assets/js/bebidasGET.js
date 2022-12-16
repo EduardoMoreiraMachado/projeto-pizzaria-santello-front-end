@@ -3,7 +3,7 @@
 const apiPizzas = async () => {
     const pizzasJSON = {}
 
-    const urlTodasPizzasAPI = `http://192.168.1.7:1206/v1/bebidas`
+    const urlTodasPizzasAPI = `http://192.168.1.204:1206/v1/bebidas`
 
     const response = await fetch(urlTodasPizzasAPI)
     pizzasJSON.statusCode = response.status
@@ -19,6 +19,10 @@ const createCardsPizzas = async (dataPizzas) => {
     // console.log(pizzasAPI.message[0])
     console.log(pizzasAPI)
     const pizzasContainer = document.getElementById('todas_bebidas_container')
+    const cssPizza = pizzasContainer.style
+    cssPizza.display = 'grid'
+    cssPizza.gridTemplateColumns = 'auto auto auto auto'
+    cssPizza.gap = '50px'
 
     pizzasAPI.message.forEach(element => {
         pizzasContainer.innerHTML += `
@@ -69,6 +73,29 @@ class card extends HTMLElement {
         const style = document.createElement('style');
 
         style.textContent = `
+        .card-pizza {
+            text-decoration: none;
+            display: flex;
+            align-items: end;
+            font-family: 'Montserrat', sans-serif;        
+            justify-content: center;
+            width: 16vw;
+            height: 30vh;
+            color: transparent;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 1.5rem;
+            background: url(${this.foto});
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-bottom: 12px;
+            border-radius: 30px;
+        }
+            
+        .card-pizza:hover {
+            box-shadow: inset 0px -60px 0px var(--color-medium);
+            color: var(--bg-color);
+        }  
         
         `
         return style;

@@ -7,7 +7,7 @@ await createAllCategorias()
 const postCategoria = async (categoria) => {
     const dadosCategoria = categoria
 
-    const url = 'http://localhost:1206/v1/categoria'
+    const url = 'http://192.168.1.204:1206/v1/categoria'
 
     const options = {
         method: 'POST',
@@ -37,7 +37,7 @@ const salvarCategoria = async function() {
 
     const categoriaJSON = {
         nome: nameCategoria,
-        codigo_tipo: tipo,
+        codigo_tipo: tipo
     }
     
     console.log(categoriaJSON)

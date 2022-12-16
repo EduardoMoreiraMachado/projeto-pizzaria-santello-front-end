@@ -2,7 +2,7 @@
 
 const getAllMensagens = async () => {
 
-    const url = 'http://localhost:1206/v1/contatos'
+    const url = 'http://192.168.1.204:1206/v1/contatos'
     
     const options = {
         method: 'GET',
@@ -21,7 +21,7 @@ const getAllMensagens = async () => {
 
 const getMensagensByOption = async (opcao) => {
 
-    const url = `http://192.168.1.7:1206/v1/contatos/filtro/${opcao}`
+    const url = `http://192.168.1.204:1206/v1/contatos/filtro/${opcao}`
     
     const options = {
         method: 'GET',
@@ -49,7 +49,7 @@ const messagesList = async () => {
 
         const cardMessage = document.createElement('a')
         cardMessage.classList.add('card__message')
-        cardMessage.href = `./second-pages/VIEWmensagem.html`
+        cardMessage.href = `./second-pages/VIEWmensagem.html?id=${element.id_contato}`
 
         const opcao = document.createElement('h3')
         opcao.classList.add('opcao__mensagem')
@@ -85,7 +85,7 @@ const listarMensagensFiltradas = async (filtro) => {
 
         const cardMessage = document.createElement('a')
         cardMessage.classList.add('card__message')
-        cardMessage.href = `./second-pages/VIEWmensagem.html`
+        cardMessage.href = `./second-pages/VIEWmensagem.html?id=${element.id}`
 
         const opcao = document.createElement('h3')
         opcao.classList.add('opcao__mensagem')

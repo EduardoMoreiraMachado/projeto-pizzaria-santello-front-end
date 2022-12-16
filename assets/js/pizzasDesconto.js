@@ -2,7 +2,7 @@
 
 const listarPizzasDesconto = async () => {
 
-    const url = 'http://192.168.1.7:1206/v1/pizzasDesconto'
+    const url = 'http://192.168.1.204:1206/v1/pizzasDesconto'
 
     const response = await fetch(url)
 
@@ -69,18 +69,26 @@ const discountPizzasList = async () => {
 
         cardDiscount.innerHTML = `
             <div class="card_header">
-                <img src="${element.foto}" class="discount_image">
+                <div class="discount_image" id="discount_image${element.id_pizza}"></div>
                 <span class="discount_name">${element.nome_produto}</span>
             </div>
             <p class="discount_ingredients">${element.ingredientes}</p>
             <span class="original_price">${precoOriginal}</span>
             <h1 class="discount_price">${precoDescontado}</h1>
+
+            <style>
+                #discount_image${element.id_pizza} {
+                    background: url(${element.foto});
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: start;
+                }
+            </style>
         `
 
         discountList.appendChild(cardDiscount)
 
     })
-
 }
 
 discountPizzasList()

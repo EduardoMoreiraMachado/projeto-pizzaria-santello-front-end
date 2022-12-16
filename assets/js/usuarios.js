@@ -3,13 +3,13 @@
 const inserirUsuario = async (usuario) => {
     let responseJSON = {}
 
-    const url = 'http://192.168.1.7:1206/v1/cliente'
+    const url = 'http://192.168.1.204:1206/v1/cliente'
 
     const options = {
         method: 'POST',
         body: JSON.stringify(usuario),
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
             'x-access-token': window.localStorage.getItem('token')
         }
     }
@@ -38,9 +38,7 @@ const saveUser = async () => {
     console.log(save)
 
     if (save.statusCode == 201) {
-        alert('AAEEEEEEE!!!!! :))))))))')
-    } else {
-        alert('AAAAAAAAAAAAAAHHHHHH!!!! ;((((((((')
+        alert('Usuário criado com sucesso.')
     }
 }
 

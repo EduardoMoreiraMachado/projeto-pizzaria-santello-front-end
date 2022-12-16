@@ -8,7 +8,7 @@ await createCategorias(1)
 const postPizza = async (pizza) => {
     const dadosPizza = pizza
 
-    const url = 'http://192.168.1.7:1206/v1/pizza'
+    const url = 'http://192.168.1.204:1206/v1/pizza'
 
     const options = {
         method: 'POST',
@@ -19,7 +19,9 @@ const postPizza = async (pizza) => {
         },
     };
 
-    await fetch(url, options);
+    const response = await fetch(url, options);
+
+    return response.status
 
 };
 
@@ -72,8 +74,9 @@ const salvarDados = async () => {
         ingredientes: ingredientesPizza
     };
     
-    await postPizza(pizzaJSON)
+    const post = await postPizza(pizzaJSON)
     
+    // if (post.status != )
     window.location.reload(true)
 }
 
