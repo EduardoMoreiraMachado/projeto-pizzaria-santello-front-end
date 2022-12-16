@@ -3,8 +3,8 @@
 Projeto construido durante as aulas de Programação Web Front-End, Back-End e Banco de Dados no curso de Desenvolvimento de Sistemas do [SENAI Jandira](https://jandira.sp.senai.br/), com orientação do Prof. [Fernando Leonid](https://github.com/fernandoleonid) e Prof. Marcel.
 
 ## Links do projeto
-- [One page](marina.12soft.com.br)
-- [Dashboard](marina.12soft.com.br/dashboard)
+- [One page](http://marina.12soft.com.br)
+- [Dashboard](http://www.marina.12soft.com.br/dashboard)
 
 ---
 
