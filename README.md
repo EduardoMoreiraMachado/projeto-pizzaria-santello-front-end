@@ -7,8 +7,8 @@ O objetivo era criar uma landing page e um dashboard de uma pizzaria fictícia c
 
 ---
 
-## O que é Landing Page?
-Landing Pages são páginas com foco principal na conversão de visitantes, assim, essas páginas possuem uma estética mais minimalista comparada com os sites tradicionais.
+## O que é One Page?
+Como o próprio nome diz, o termo representa um site de página única. Ele foi criado para que todo o conteúdo seja mostrado na mesma página, com layout único e concentração das informações em um mesmo ambiente. O objetivo principal é trazer dinamismo e agilidade para a navegação do usuário.
 
 ---
 
@@ -27,6 +27,8 @@ Dashboard é um tipo de interface gráfica de usuário que geralmente fornece vi
 
 ## Links
 - [Código do Front-End](https://github.com/EduardoMoreiraMachado/projeto-pizzaria-santello-front-end)
+- [Código do Back-End](https://github.com/EduardoMoreiraMachado/projeto-pizzaria-santello-back-end.git)
+- [Protótipo do figma](https://www.figma.com/file/ON71teYRgF0vBtwP3LOWLB/layout?node-id=0%3A1&t=NmFp7LvIgCxyp9df-0)
 
 ---
 

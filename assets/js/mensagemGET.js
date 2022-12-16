@@ -44,6 +44,7 @@ const deleteMensagem = async (id) => {
 const viewMessage = async function() {
     const apiData = await getMensagem(id)
 
+console.log(apiData[0])
     const mensagemContainer = document.getElementById('message_container')
 
     const tipo = document.createElement('h1')
@@ -68,7 +69,7 @@ const viewMessage = async function() {
     const telefone = document.createElement('li')
     telefone.classList.add('data')
 
-    if (apiData[0].telefone == "undefined") {
+    if (apiData[0].telefone == "undefined" || apiData[0].telefone == "") {
         telefone.textContent = 'Telefone não informado.'
     }
 
@@ -100,9 +101,9 @@ const viewMessage = async function() {
 await viewMessage()
 
 document.getElementById('button_delete').addEventListener('click', async () => {
-    console.log(deleteMensagem(id))
+    await deleteMensagem(id)
 
-    //window.location.href = `../mensagens.html`
+    window.location.href = `../mensagens.html`
 })
 
 console.log(id)
