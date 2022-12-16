@@ -4,7 +4,7 @@ Projeto construido durante as aulas de Programação Web Front-End, Back-End e B
 
 ## Links do projeto
 - [One page](http://marina.12soft.com.br)
-- [Dashboard](http://www.marina.12soft.com.br/dashboard)
+- [Dashboard](http://marina.12soft.com.br/dashboard)
 
 ---
 
